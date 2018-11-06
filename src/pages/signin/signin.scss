@@ -1,0 +1,16 @@
+.signin-background {
+    position:fixed;
+    background: -webkit-linear-gradient(#2a3040, #2a3040); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#2a3040, #2a3040); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#2a3040, #2a3040); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#2a3040, #2a3040); /* Standard syntax */
+}
+
+.no-color {
+    position:fixed;
+    background: -webkit-linear-gradient(white, white); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(white, white); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#2a3040, white); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(white, white); /* Standard syntax */
+}
+

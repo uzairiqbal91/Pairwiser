@@ -1,0 +1,86 @@
+<ion-header class="ionic_toolbar">
+  <ion-navbar>
+      <ion-grid>
+          <ion-row>
+            <ion-col col-4><ion-icon name="ios-menu-outline" style="color:white;"></ion-icon></ion-col>
+            <ion-col col-4><img src="imgs/logo.png" style="width:100%"/></ion-col>
+            <ion-col col-4> <ion-icon name="ios-options-outline" style="color:white;float:right"></ion-icon></ion-col>
+            </ion-row>
+        </ion-grid>
+  </ion-navbar>
+  <div style="background-color: #2a3040">
+      <ion-segment [(ngModel)]="pairs">
+        <ion-segment-button value="discover">
+          Discover
+        </ion-segment-button>
+        <ion-segment-button value="sizes">
+          Sizes
+        </ion-segment-button>
+        <ion-segment-button value="brands">
+            Brands
+          </ion-segment-button>
+      </ion-segment>
+    </div>
+</ion-header>
+
+<ion-content>
+      <!--div [ngSwitch]="pairs"-->
+      <div [ngSwitch]="pairs" swipeSegment [tabsList]="categories" [(currentTab)]="category" (tabChanged)="onTabChanged($event)" class="swipe-area">
+
+          <ion-list *ngSwitchCase="'discover'">
+          
+            <ion-grid>
+              <ion-row>
+                <ion-col>  <!--align-self-start-->
+                  <div>
+                    <ion-card style="border-radius:12px 12px;height: 230px;width:95%;">
+              
+                      <div align="center" style="padding-top:5px;padding-bottom:5px">
+                        <img src="imgs/shoes.png" style="width:72%"/>
+                      </div>   
+        
+                          <div>
+                            <h4 style="color:grey;padding-left:5px;font-size: 1.0em;">Red wing moc toe</h4>
+                            <b style="color:black;padding-left:7px;padding-bottom:10px;font-size: 1.0em;">$190</b>       
+                          </div>
+        
+                    </ion-card>
+                  </div>
+                </ion-col>
+              
+                <ion-col>  <!--align-self-end-->
+                  <div>
+                    <ion-card style="border-radius:12px 12px;height: 230px;;width:95%;">
+              
+                      <div align="center" style="padding-top:5px;padding-bottom:5px">
+                        <img src="imgs/shoes.png" style="width:72%"/>
+                      </div>   
+                          <div>
+                            <h4 style="color:grey;padding-left:5px;font-size: 1.0em;">Red wing moc toe</h4>
+                            <b style="color:black;padding-left:7px;padding-bottom:10px;font-size: 1.0em;">$190</b>       
+                          </div>
+                    </ion-card>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          
+          </ion-list>
+        
+          <ion-list *ngSwitchCase="'sizes'">
+          
+          
+          </ion-list>
+
+          <ion-list *ngSwitchCase="'brands'">
+             
+            </ion-list>
+
+
+        </div>
+
+
+</ion-content>
+
+
+
