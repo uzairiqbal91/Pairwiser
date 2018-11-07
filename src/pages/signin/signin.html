@@ -1,0 +1,76 @@
+<ion-content no-bounce>
+
+  <div align="center">
+    <img src="imgs/signin_page.png" />
+  </div>
+
+
+
+
+  <ion-list padding>
+
+
+    <ion-item>
+      <ion-label>
+        <ion-icon name="ios-person-outline"></ion-icon>
+      </ion-label>
+      <ion-input type="text" placeholder="Username" [(ngModel)]="user_name"></ion-input>
+    </ion-item>
+
+
+
+    <ion-item>
+      <ion-label>
+        <ion-icon name="ios-lock-outline"></ion-icon>
+      </ion-label>
+      <ion-input placeholder="Password" type="password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+
+    <ion-item style="display:none">
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <div align="center" style="padding-left:15px;padding-right:15px;">
+    <!--img src="imgs/login_button.png" style="width: 84%;" (click)="signin()"/-->
+    <button ion-button round (click)="addEvent();" style="width:90%;border-top: 2px solid; border-bottom: 2px solid; border-left: 2px solid; border-right: 2px solid;" [ngStyle]="{'background-color': buttonColor, 'color': buttonColor2}">Login</button>
+    <!--button ion-button round full style="background-color:transparent;color: #0077c8;padding-left:15px;padding-right:15px;" (click)="someAction()">Login</button-->
+  </div>
+
+  <div align="center">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6>
+          <p style="color:#0077c8">Forgot Password ?</p>
+        </ion-col>
+        <ion-col col-6>
+          <p style="color:#0077c8" (click)="sendto()">Create Account</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+
+  <div align="center">
+    <img src="imgs/login_with.png" style="width: 59%;"/>
+  </div>
+
+  <div align="center" style="margin-top:5px;">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6>
+          <img src="imgs/social_fb.png"/>
+        </ion-col>
+        <ion-col col-6>
+          <img src="imgs/social_twitter.png"/>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+
+</ion-content>
+
+

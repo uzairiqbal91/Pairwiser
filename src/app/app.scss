@@ -1,0 +1,146 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+@supports (column-count: 5) {
+    .wrapper {
+       -moz-column-count: 5;
+       -webkit-column-count: 5;
+       column-count: 5;
+       -moz-column-gap: 0.5em;
+       -webkit-column-gap: 0.5em;
+       column-gap: 0.5em;
+ 
+ 
+       section {
+            width: 100%;
+            margin: 0 0.5em 0.5em 0;
+            padding: 1em;
+            display: inline-block;
+         color: rgba(68, 68, 68, 1);
+         text-align: center;
+         -moz-box-sizing: border-box;
+         -webkit-box-sizing: border-box;
+         box-sizing: border-box;
+ 
+         img {
+            display : block;
+            margin: 0 auto 2em auto;
+            width: 90px;
+         }
+       }
+    }
+ 
+ 
+    /// Define 4 column count for screen sizes up to 1200 pixels in width
+    @media only screen and (max-width: 1200px) {
+       .wrapper {
+          -moz-column-count: 4;
+          -webkit-column-count: 4;
+          column-count: 4;
+       }
+    }
+ 
+ 
+    /// Define 3 column count for screen sizes up to 900 pixels in width
+    @media only screen and (max-width: 900px) {
+       .wrapper {
+          -moz-column-count: 3;
+          -webkit-column-count: 3;
+          column-count: 3;
+       }
+    }
+ 
+ 
+    /// Define 2 column count for screen sizes up to 800 pixels in width
+    @media only screen and (max-width: 800px) {
+       .wrapper {
+             -moz-column-count: 2;
+          -webkit-column-count: 2;
+          column-count: 2;
+       }
+    }
+ 
+ 
+    /// Define 1 column count for screen sizes up to 600 pixels in width
+    @media only screen and (max-width: 600px) {
+       .wrapper {
+          -moz-column-count: 1;
+          -webkit-column-count: 1;
+          column-count: 1;
+          -moz-column-gap: 0;
+          -webkit-column-gap: 0;
+          column-gap: 0;
+       }
+    }
+ }
+ 
+
+ @supports not (column-count: 5) {
+    .wrapper {
+       width: 100%;
+ 
+       section {
+         display: inline-block;
+         vertical-align: top;
+       }
+    }
+ 
+ 
+    @media only screen and (max-width: 1200px) {
+       .wrapper {
+          section {
+               width: 19.25%;
+          }
+       }
+    }
+ 
+ 
+    @media only screen and (max-width: 1000px) {
+       .wrapper {
+          section {
+               width: 25%;
+          }
+       }
+    }
+ 
+ 
+    @media only screen and (max-width: 800px) {
+       .wrapper {
+          section {
+               width: 33%;
+          }
+       }
+    }
+ 
+ 
+    @media only screen and (max-width: 600px) {
+       .wrapper {
+          section {
+               width: 50%;
+          }
+       }
+    }
+ 
+ 
+    @media only screen and (max-width: 450px) {
+       .wrapper {
+          section {
+               width: 100%;
+          }
+       }
+    }
+ }

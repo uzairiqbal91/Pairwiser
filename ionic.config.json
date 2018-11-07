@@ -1,0 +1,8 @@
+{
+  "name": "pairwiser",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "app_id": ""
+}

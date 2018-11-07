@@ -1,0 +1,59 @@
+<ion-content no-bounce>
+
+  <div align="center">
+    <img src="imgs/signin_page.png"/>
+  </div>
+
+  <ion-list padding>
+
+
+    <ion-item>
+      <ion-label>
+        <ion-icon name="ios-person-outline"></ion-icon>
+      </ion-label>
+      <ion-input placeholder="Username" type="text" [(ngModel)]="user_name"></ion-input>
+    </ion-item>
+
+
+
+    <ion-item>
+      <ion-label>
+        <ion-icon name="ios-lock-outline"></ion-icon>
+      </ion-label>
+      <ion-input  placeholder="Password" type="password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <ion-icon name="ios-lock-outline"></ion-icon>
+      </ion-label>
+      <ion-input  placeholder="Confirm Password" type="password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <ion-icon name="ios-mail-outline"></ion-icon>
+      </ion-label>
+      <ion-input  placeholder="Email" type="text" [(ngModel)]="user_name"></ion-input>
+    </ion-item>
+
+    <ion-item style="display:none">
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+<div align="center" style="padding-left:15px; padding-right:15px">
+<button ion-button round full style="background-color:transparent;color:#0077c8" (click)="signup()">Create Account</button>
+</div>
+
+  <div align="center">
+    <p style="margin-top:40px">By using this application you agree to our</p>
+    <p style="margin-top:-10px"><b style="color:#0077c8">Terms of Use</b>&nbsp;and&nbsp;<b style="color:#0077c8">Privacy Policy</b></p>
+  </div>
+
+
+
+</ion-content>
+

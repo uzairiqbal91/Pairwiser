@@ -1,0 +1,430 @@
+<ion-header class="ionic_toolbar">
+  <ion-navbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-4>
+          <ion-icon name="ios-menu-outline" style="color:white;" (click)="OnOpenMenu()"></ion-icon>
+        </ion-col>
+        <ion-col col-4><img src="imgs/logo.png" style="width:100%" /></ion-col>
+        <ion-col col-4>
+          <ion-icon name="ios-options-outline" style="color:white;float:right"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-navbar>
+  <div style="background-color: #2a3040">
+    <ion-segment [(ngModel)]="pairs">
+      <ion-segment-button value="discover">
+        Discover
+      </ion-segment-button>
+      <ion-segment-button value="sizes">
+        Sizes
+      </ion-segment-button>
+      <ion-segment-button value="brands">
+        Brands
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+</ion-header>
+
+<ion-content>
+  <!--div [ngSwitch]="pairs"-->
+  <div [ngSwitch]="pairs" swipeSegment [tabsList]="categories" [(currentTab)]="category" (tabChanged)="onTabChanged($event)"
+    class="swipe-area">
+
+    <ion-list *ngSwitchCase="'discover'">
+
+      <ion-grid style="margin-left: -6px;">
+        <ion-row>
+          <ion-col>
+            <!--align-self-start-->
+            <div>
+              <ion-card (click)="addEvent1();" [ngStyle]="{'border-top-color':buttonColor, 'border-bottom-color':buttonColor, 'border-right-color':buttonColor, 'border-left-color':buttonColor}"
+                style="border-radius:12px 12px;height: 230px;;width:95%; border-top: 2px solid; border-bottom: 2px solid; border-left: 2px solid; border-right: 2px solid;">
+
+                <div align="center" style="padding-top:5px;padding-bottom:5px">
+                  <img src="imgs/shoes.png" style="width:72%" />
+                </div>
+
+                <div style="margin-top: 66px;">
+
+                  <h4 style="color:grey;padding-left:5px;font-size: 1.0em;">Red wing moc toe</h4>
+                  <b style="color:black;padding-left:7px;padding-bottom:10px;font-size: 1.0em;">$190</b>
+
+                </div>
+
+              </ion-card>
+            </div>
+          </ion-col>
+
+          <ion-col>
+            <!--align-self-end-->
+            <div>
+              <ion-card (click)="addEvent2();" [ngStyle]="{'border-top-color':buttonColor1, 'border-bottom-color':buttonColor1, 'border-right-color':buttonColor1, 'border-left-color':buttonColor1}"
+                style="border-radius:12px 12px;height: 230px;;width:95%; border-top: 2px solid; border-bottom: 2px solid; border-left: 2px solid; border-right: 2px solid;">
+
+                <div align="center" style="padding-top:5px;padding-bottom:5px">
+                  <img src="imgs/shoe1.png" style="width:72%" />
+                </div>
+                <div style="margin-top: 66px;">
+                  <h4 style="color:grey;padding-left:5px;font-size: 1.0em;">Red wing moc toe</h4>
+                  <b style="color:black;padding-left:7px;padding-bottom:10px;font-size: 1.0em;">$190</b>
+                </div>
+              </ion-card>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-grid style="margin-top: -24px;margin-left: -6px;">
+        <ion-row>
+          <ion-col>
+            <!--align-self-start-->
+            <div>
+              <ion-card (click)="addEvent3();" [ngStyle]="{'border-top-color':buttonColor2, 'border-bottom-color':buttonColor2, 'border-right-color':buttonColor2, 'border-left-color':buttonColor2}"
+                style="border-radius:12px 12px;height: 230px;;width:95%; border-top: 2px solid; border-bottom: 2px solid; border-left: 2px solid; border-right: 2px solid;">
+
+                <div align="center" style="padding-top:28px;padding-bottom:5px">
+                  <img src="imgs/shoe4.png" style="width:72%" />
+                </div>
+
+                <div style="margin-top: 66px;">
+
+                  <h4 style="color:grey;padding-left:5px;font-size: 1.0em;">Red wing moc toe</h4>
+                  <b style="color:black;padding-left:7px;padding-bottom:10px;font-size: 1.0em;">$190</b>
+
+                </div>
+
+              </ion-card>
+            </div>
+          </ion-col>
+
+          <ion-col>
+            <!--align-self-end-->
+            <div>
+              <ion-card (click)="addEvent4();" [ngStyle]="{'border-top-color':buttonColor3, 'border-bottom-color':buttonColor3, 'border-right-color':buttonColor3, 'border-left-color':buttonColor3}"
+                style="border-radius:12px 12px;height: 230px;;width:95%; border-top: 2px solid; border-bottom: 2px solid; border-left: 2px solid; border-right: 2px solid;">
+
+                <div align="center" style="padding-top:28px;padding-bottom:5px">
+                  <img src="imgs/shoe3.png" style="width:72%" />
+                </div>
+                <div style="margin-top: 66px;">
+                  <h4 style="color:grey;padding-left:5px;font-size: 1.0em;">Red wing moc toe</h4>
+                  <b style="color:black;padding-left:7px;padding-bottom:10px;font-size: 1.0em;">$190</b>
+                </div>
+              </ion-card>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <!--button ion-button block (click)="addEvent();" [ngStyle]="{'background-color': buttonColor}">Add Event</button-->
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'sizes'">
+
+      <ion-grid style="width: 108%;margin-left: -18px;margin-top: -15px;">
+        <ion-row>
+          <ion-col col-3>
+
+            <ion-card (click)="sized1();" [ngStyle]="{'border-top-color':sizes1, 'border-bottom-color':sizes1, 'border-right-color':sizes1, 'border-left-color':sizes1}"
+              style="border-top: 2px solid; border-bottom: 2px solid; border-left: 2px solid; border-right: 2px solid;width: 109%;height: 78px;">
+              <div align="center">
+                <p style="color:#005aac;font-size: 2em;margin-top: 10px;">4</p>
+              </div>
+            </ion-card>
+
+          </ion-col>
+          <ion-col col-3>
+
+            <ion-card (click)="sized2();" [ngStyle]="{'border-top-color':sizes2, 'border-bottom-color':sizes2, 'border-right-color':sizes2, 'border-left-color':sizes2}"
+              style="border-top: 2px solid; border-bottom: 2px solid; border-left: 2px solid; border-right: 2px solid;width: 103%;height: 78px;">
+              <div align="center">
+                <p style="color:#005aac;font-size: 2em;margin-top: 10px;">4.5</p>
+              </div>
+            </ion-card>
+
+          </ion-col>
+          <ion-col col-3 style="margin-left: -5px;">
+
+            <ion-card (click)="sized3();" [ngStyle]="{'border-top-color':sizes3, 'border-bottom-color':sizes3, 'border-right-color':sizes3, 'border-left-color':sizes3}"
+              style="border-top: 2px solid; border-bottom: 2px solid; border-left: 2px solid; border-right: 2px solid;width: 103%;height: 78px;">
+              <div align="center">
+                <p style="color:#005aac;font-size: 2em;margin-top: 10px;">5</p>
+              </div>
+            </ion-card>
+
+          </ion-col>
+
+          <ion-col col-3 style="margin-left: -5px;">
+
+            <ion-card (click)="sized4();" [ngStyle]="{'border-top-color':sizes4, 'border-bottom-color':sizes4, 'border-right-color':sizes4, 'border-left-color':sizes4}"
+              style="border-top: 2px solid; border-bottom: 2px solid; border-left: 2px solid; border-right: 2px solid;width: 95%;height: 78px;">
+              <div align="center">
+                <p style="color:#005aac;font-size: 2em;margin-top: 10px;">5.5</p>
+              </div>
+            </ion-card>
+
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="margin-top: -28px;">
+          <ion-col col-3>
+
+            <ion-card (click)="sized21();" [ngStyle]="{'border-top-color':buttonColor, 'border-bottom-color':buttonColor, 'border-right-color':buttonColor, 'border-left-color':buttonColor}"
+              style="border-top: 1.2px solid; border-bottom: 1.2px solid; border-left: 1.2px solid; border-right: 1.2px solid;width: 109%;height: 78px;">
+              <div align="center">
+                <p style="color:#005aac;font-size: 2em;margin-top: 10px;">6</p>
+              </div>
+            </ion-card>
+
+          </ion-col>
+          <ion-col col-3>
+
+            <ion-card (click)="sized12();" [ngStyle]="{'border-top-color':buttonColor, 'border-bottom-color':buttonColor, 'border-right-color':buttonColor, 'border-left-color':buttonColor}"
+              style="border-top: 1.2px solid; border-bottom: 1.2px solid; border-left: 1.2px solid; border-right: 1.2px solid;width: 103%;height: 78px;">
+              <div align="center">
+                <p style="color:#005aac;font-size: 2em;margin-top: 10px;">6.5</p>
+              </div>
+            </ion-card>
+
+          </ion-col>
+          <ion-col col-3 style="margin-left: -5px;">
+
+            <ion-card (click)="sized13();" [ngStyle]="{'border-top-color':buttonColor, 'border-bottom-color':buttonColor, 'border-right-color':buttonColor, 'border-left-color':buttonColor}"
+              style="border-top: 1.2px solid; border-bottom: 1.2px solid; border-left: 1.2px solid; border-right: 1.2px solid;width: 103%;height: 78px;">
+              <div align="center">
+                <p style="color:#005aac;font-size: 2em;margin-top: 10px;">7</p>
+              </div>
+            </ion-card>
+
+          </ion-col>
+
+          <ion-col col-3 style="margin-left: -5px;">
+
+            <ion-card (click)="sized14();" [ngStyle]="{'border-top-color':buttonColor, 'border-bottom-color':buttonColor, 'border-right-color':buttonColor, 'border-left-color':buttonColor}"
+              style="border-top: 1.2px solid; border-bottom: 1.2px solid; border-left: 1.2px solid; border-right: 1.2px solid;width: 95%;height: 78px;">
+              <div align="center">
+                <p style="color:#005aac;font-size: 2em;margin-top: 10px;">7.5</p>
+              </div>
+            </ion-card>
+
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="margin-top: -28px;">
+          <ion-col col-3>
+
+            <ion-card (click)="sized31();" [ngStyle]="{'border-top-color':buttonColor, 'border-bottom-color':buttonColor, 'border-right-color':buttonColor, 'border-left-color':buttonColor}"
+              style="border-top: 1.2px solid; border-bottom: 1.2px solid; border-left: 1.2px solid; border-right: 1.2px solid;width: 109%;height: 78px;">
+              <div align="center">
+                <p style="color:#005aac;font-size: 2em;margin-top: 10px;">8</p>
+              </div>
+            </ion-card>
+
+          </ion-col>
+          <ion-col col-3>
+
+            <ion-card (click)="sized32();" [ngStyle]="{'border-top-color':buttonColor, 'border-bottom-color':buttonColor, 'border-right-color':buttonColor, 'border-left-color':buttonColor}"
+              style="border-top: 1.2px solid; border-bottom: 1.2px solid; border-left: 1.2px solid; border-right: 1.2px solid;width: 103%;height: 78px;">
+              <div align="center">
+                <p style="color:#005aac;font-size: 2em;margin-top: 10px;">8.5</p>
+              </div>
+            </ion-card>
+
+          </ion-col>
+          <ion-col col-3 style="margin-left: -5px;">
+
+            <ion-card (click)="sized33();" [ngStyle]="{'border-top-color':buttonColor, 'border-bottom-color':buttonColor, 'border-right-color':buttonColor, 'border-left-color':buttonColor}"
+              style="border-top: 1.2px solid; border-bottom: 1.2px solid; border-left: 1.2px solid; border-right: 1.2px solid;width: 103%;height: 78px;">
+              <div align="center">
+                <p style="color:#005aac;font-size: 2em;margin-top: 10px;">9</p>
+              </div>
+            </ion-card>
+
+          </ion-col>
+
+          <ion-col col-3 style="margin-left: -5px;">
+
+            <ion-card (click)="sized34();" [ngStyle]="{'border-top-color':buttonColor, 'border-bottom-color':buttonColor, 'border-right-color':buttonColor, 'border-left-color':buttonColor}"
+              style="border-top: 1.2px solid; border-bottom: 1.2px solid; border-left: 1.2px solid; border-right: 1.2px solid;width: 95%;height: 78px;">
+              <div align="center">
+                <p style="color:#005aac;font-size: 2em;margin-top: 10px;">9.5</p>
+              </div>
+            </ion-card>
+
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="margin-top: -28px;">
+          <ion-col col-3>
+
+            <ion-card (click)="sized41();" [ngStyle]="{'border-top-color':buttonColor, 'border-bottom-color':buttonColor, 'border-right-color':buttonColor, 'border-left-color':buttonColor}"
+              style="border-top: 1.2px solid; border-bottom: 1.2px solid; border-left: 1.2px solid; border-right: 1.2px solid;width: 109%;height: 78px;">
+              <div align="center">
+                <p style="color:#005aac;font-size: 2em;margin-top: 10px;">10</p>
+              </div>
+            </ion-card>
+
+          </ion-col>
+          <ion-col col-3>
+
+            <ion-card (click)="sized42();" [ngStyle]="{'border-top-color':buttonColor, 'border-bottom-color':buttonColor, 'border-right-color':buttonColor, 'border-left-color':buttonColor}"
+              style="border-top: 1.2px solid; border-bottom: 1.2px solid; border-left: 1.2px solid; border-right: 1.2px solid;width: 103%;height: 78px;">
+              <div align="center">
+                <p style="color:#005aac;font-size: 2em;margin-top: 10px;">10.5</p>
+              </div>
+            </ion-card>
+
+          </ion-col>
+          <ion-col col-3 style="margin-left: -5px;">
+
+            <ion-card (click)="sized43();" [ngStyle]="{'border-top-color':buttonColor, 'border-bottom-color':buttonColor, 'border-right-color':buttonColor, 'border-left-color':buttonColor}"
+              style="border-top: 1.2px solid; border-bottom: 1.2px solid; border-left: 1.2px solid; border-right: 1.2px solid;width: 103%;height: 78px;">
+              <div align="center">
+                <p style="color:#005aac;font-size: 2em;margin-top: 10px;">11</p>
+              </div>
+            </ion-card>
+
+          </ion-col>
+
+          <ion-col col-3 style="margin-left: -5px;">
+
+            <ion-card (click)="sized44();" [ngStyle]="{'border-top-color':buttonColor, 'border-bottom-color':buttonColor, 'border-right-color':buttonColor, 'border-left-color':buttonColor}"
+              style="border-top: 1.2px solid; border-bottom: 1.2px solid; border-left: 1.2px solid; border-right: 1.2px solid;width: 95%;height: 78px;">
+              <div align="center">
+                <p style="color:#005aac;font-size: 2em;margin-top: 10px;">11.5</p>
+              </div>
+            </ion-card>
+
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="margin-top: -28px;">
+          <ion-col col-3>
+
+            <ion-card (click)="sized51();" [ngStyle]="{'border-top-color':buttonColor, 'border-bottom-color':buttonColor, 'border-right-color':buttonColor, 'border-left-color':buttonColor}"
+              style="border-top: 1.2px solid; border-bottom: 1.2px solid; border-left: 1.2px solid; border-right: 1.2px solid;width: 109%;height: 78px;">
+              <div align="center">
+                <p style="color:#005aac;font-size: 2em;margin-top: 10px;">12</p>
+              </div>
+            </ion-card>
+
+          </ion-col>
+          <ion-col col-3>
+
+            <ion-card (click)="sized52();" [ngStyle]="{'border-top-color':buttonColor, 'border-bottom-color':buttonColor, 'border-right-color':buttonColor, 'border-left-color':buttonColor}"
+              style="border-top: 1.2px solid; border-bottom: 1.2px solid; border-left: 1.2px solid; border-right: 1.2px solid;width: 103%;height: 78px;">
+              <div align="center">
+                <p style="color:#005aac;font-size: 2em;margin-top: 10px;">12.5</p>
+              </div>
+            </ion-card>
+
+          </ion-col>
+          <ion-col col-3 style="margin-left: -5px;">
+
+            <ion-card (click)="sized53();" [ngStyle]="{'border-top-color':buttonColor, 'border-bottom-color':buttonColor, 'border-right-color':buttonColor, 'border-left-color':buttonColor}"
+              style="border-top: 1.2px solid; border-bottom: 1.2px solid; border-left: 1.2px solid; border-right: 1.2px solid;width: 103%;height: 78px;">
+              <div align="center">
+                <p style="color:#005aac;font-size: 2em;margin-top: 10px;">13</p>
+              </div>
+            </ion-card>
+
+          </ion-col>
+
+          <ion-col col-3 style="margin-left: -5px;">
+
+            <ion-card (click)="sized54();" [ngStyle]="{'border-top-color':buttonColor, 'border-bottom-color':buttonColor, 'border-right-color':buttonColor, 'border-left-color':buttonColor}"
+              style="border-top: 1.2px solid; border-bottom: 1.2px solid; border-left: 1.2px solid; border-right: 1.2px solid;width: 95%;height: 78px;">
+              <div align="center">
+                <p style="color:#005aac;font-size: 2em;margin-top: 10px;">13.5</p>
+              </div>
+            </ion-card>
+
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="margin-top: -28px;">
+          <ion-col col-3>
+
+            <ion-card (click)="sized61();" [ngStyle]="{'border-top-color':buttonColor, 'border-bottom-color':buttonColor, 'border-right-color':buttonColor, 'border-left-color':buttonColor}"
+              style="border-top: 1.2px solid; border-bottom: 1.2px solid; border-left: 1.2px solid; border-right: 1.2px solid;width: 109%;height: 78px;">
+              <div align="center">
+                <p style="color:#005aac;font-size: 2em;margin-top: 10px;">14</p>
+              </div>
+            </ion-card>
+
+          </ion-col>
+          <ion-col col-3>
+
+            <ion-card (click)="sized62();" [ngStyle]="{'border-top-color':buttonColor, 'border-bottom-color':buttonColor, 'border-right-color':buttonColor, 'border-left-color':buttonColor}"
+              style="border-top: 1.2px solid; border-bottom: 1.2px solid; border-left: 1.2px solid; border-right: 1.2px solid;width: 103%;height: 78px;">
+              <div align="center">
+                <p style="color:#005aac;font-size: 2em;margin-top: 10px;">14.5</p>
+              </div>
+            </ion-card>
+
+          </ion-col>
+          <ion-col col-3 style="margin-left: -5px;">
+
+            <ion-card (click)="sized63();" [ngStyle]="{'border-top-color':buttonColor, 'border-bottom-color':buttonColor, 'border-right-color':buttonColor, 'border-left-color':buttonColor}"
+              style="border-top: 1.2px solid; border-bottom: 1.2px solid; border-left: 1.2px solid; border-right: 1.2px solid;width: 103%;height: 78px;">
+              <div align="center">
+                <p style="color:#005aac;font-size: 2em;margin-top: 10px;">15</p>
+              </div>
+            </ion-card>
+
+          </ion-col>
+
+          <ion-col col-3 style="margin-left: -5px;">
+
+            <ion-card (click)="sized64();" [ngStyle]="{'border-top-color':buttonColor, 'border-bottom-color':buttonColor, 'border-right-color':buttonColor, 'border-left-color':buttonColor}"
+              style="border-top: 1.2px solid; border-bottom: 1.2px solid; border-left: 1.2px solid; border-right: 1.2px solid;width: 95%;height: 78px;">
+              <div align="center">
+                <p style="color:#005aac;font-size: 2em;margin-top: 10px;">15.5</p>
+              </div>
+            </ion-card>
+
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'brands'">
+
+      <div align="center" style="margin-top: -4px;">
+        <img src="imgs/custom.png" />
+      </div>
+
+
+      <div class="card-background-page" no-padding>
+
+        <ion-card style="border-radius:12px 12px">
+          <img src="imgs/addidas.png" />
+        </ion-card>
+
+        <ion-card style="border-radius:12px 12px">
+          <img src="imgs/nike.png" />
+        </ion-card>
+
+      </div>
+
+
+      <ion-fab center>
+        <button ion-fab style="background-color:#f9c04c">
+          <ion-icon ios="ios-add" md="md-add" style="color:white;zoom:2.0"></ion-icon>
+        </button>
+      </ion-fab>
+
+
+    </ion-list>
+
+
+  </div>
+
+
+
+
+
+</ion-content>
