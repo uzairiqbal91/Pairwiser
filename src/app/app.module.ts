@@ -15,6 +15,7 @@ import { SigninPage } from '../pages/signin/signin';
 import { SignupPage } from '../pages/signup/signup';
 import { SearchPage } from '../pages/search/search';
 import { SwipeSegmentDirective } from '../directives/swipe-segment/swipe-segment';
+import { EditProfilePage } from '../pages/edit-profile/edit-profile';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { SwipeSegmentDirective } from '../directives/swipe-segment/swipe-segment
     SigninPage,
     SignupPage,
     SearchPage,
-    SwipeSegmentDirective
+    SwipeSegmentDirective,
+    EditProfilePage
   ],
   imports: [
     BrowserModule,
@@ -44,7 +46,8 @@ import { SwipeSegmentDirective } from '../directives/swipe-segment/swipe-segment
     MainPage,
     SigninPage,
     SignupPage,
-    SearchPage
+    SearchPage,
+    EditProfilePage
   ],
   providers: [
     StatusBar,

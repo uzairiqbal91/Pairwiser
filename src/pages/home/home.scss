@@ -1,3 +1,10 @@
+page-home {
+    .toolbar-background-md {
+        color: white;
+        background-color: #98979f;
+    }
+}
+
 .tabs-md .tabbar {
     background: black;
 }
@@ -26,10 +33,6 @@
     transform-origin: 50% 150%;
 }
 
-.toolbar-background-md {
-    color: white;
-    background-color: #98979f;
-}
 
 ion-icon {
     display: inline-block;

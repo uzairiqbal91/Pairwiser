@@ -1,3 +1,56 @@
 page-about {
+    .toolbar-background-md {
+        color: white;
+        background-color: #2a3040;
+    }
 
+    .text-input {
+        -moz-appearance: none;
+        -ms-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+        border-radius: 0;
+        display: inline-block;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        width: 92%;
+        width: calc(100% - 10px);
+        border: 0;
+        background: lightgrey;
+    }
+
+    .text-input-ios {
+        margin: -7px 6px 13px -5px;
+        padding: 6px;
+        width: calc(98% - 2px);
+    }
+    .chat_screen{
+        border-top-color : black;
+        border-bottom-color : black;
+        border-right-color : black;
+        border-left-color : black;
+    }
+
+    .page-about .text-input {
+        -moz-appearance: none;
+        -ms-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+        border-radius: 5px 5px;
+        display: inline-block;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        width: calc(100% - 10px);
+        background: lightgrey;
+    }
+    .text-input-md {
+        margin: 3px 8px;
+        padding: 0;
+        width: calc(100% - 8px - 8px);
+        height: 38px;
+    }
 }
