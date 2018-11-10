@@ -1,0 +1,28 @@
+<ion-header class="ionic_toolbar">
+    <ion-navbar>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-4>
+            <ion-icon name="ios-menu-outline" style="color:white;" (click)="OnOpenMenu()"></ion-icon>
+          </ion-col>
+          <ion-col col-4><img src="imgs/logo.png" style="width:100%" /></ion-col>
+          <ion-col col-4></ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-navbar>
+  </ion-header>
+
+
+<ion-content>
+
+    <ion-list>
+        <ion-item *ngFor="let post of notifications">
+          <ion-avatar item-start>
+            <img src="{{post.user_image}}">
+          </ion-avatar>
+          <h2 style="color:#a6a6a6;"><b style="color:black">//{{post.user_name}}</b> {{post.notification}}</h2>
+          <p style="color:#a6a6a6;">{{post.time}}</p>
+        </ion-item>
+      </ion-list>
+
+</ion-content>

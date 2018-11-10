@@ -1,21 +1,118 @@
 <ion-header class="ionic_toolbar">
-    <ion-navbar>
-        <ion-grid>
-            <ion-row>
-              <ion-col col-4><ion-icon name="ios-menu-outline" style="color:white;"></ion-icon></ion-col>
-              <ion-col col-4><img src="imgs/logo.png"/></ion-col>
-              <ion-col col-4> <ion-icon name="ios-options-outline" style="color:white;float:right"></ion-icon></ion-col>
-              </ion-row>
-          </ion-grid>
-    </ion-navbar>
-  </ion-header>
+  <ion-navbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-4>
+          <ion-icon name="ios-menu-outline" style="color:white;" (click)="OnOpenMenu()"></ion-icon>
+        </ion-col>
+        <ion-col col-4><img src="imgs/pairwiser-logo-profile-page.png" style="width:100%;margin-top: 5px;"/></ion-col>
+        <ion-col col-4></ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-navbar>
+
+  <div style="background-color:white">
+    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  </div>
+
+  <div style="background-color: #2a3040">
+    <ion-segment [(ngModel)]="pairwisers">
+      <ion-segment-button value="pair">
+        Pair
+      </ion-segment-button>
+      <ion-segment-button value="wisers">
+        Wisers
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+</ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
-    <ion-item>
-      <ion-icon name="ionic" item-start></ion-icon>
-      
-    </ion-item>
-  </ion-list>
+
+  <div [ngSwitch]="pairwisers" swipeSegment [tabsList]="categories" [(currentTab)]="category" (tabChanged)="onTabChanged($event)"
+    class="swipe-area">
+
+    <ion-list *ngSwitchCase="'pair'">
+
+      <ion-grid style="margin-left: -10px;">
+        <ion-row>
+          <ion-col col-6 *ngFor="let product of products">
+            <!--align-self-start-->
+            <div>
+              <ion-card [ngStyle]="{'border-top-color':buttonColor, 'border-bottom-color':buttonColor, 'border-right-color':buttonColor, 'border-left-color':buttonColor}"
+                style="border-radius:12px 12px;width:100%; border-top: 2px solid; border-bottom: 2px solid; border-left: 2px solid; border-right: 2px solid;">
+
+                <div align="center" style="padding-top:5px;padding-bottom:5px">
+                  <img src="{{product.image}}" style="width:72%" />
+                </div>
+
+                <div style="margin-top: 50px;">
+
+                  <h4 style="color:grey;padding-left:5px;font-size: 1.0em;">{{product.product_name}}</h4>
+                  <b style="color:black;padding-left:7px;padding-bottom:10px;font-size: 1.0em;">${{product.price}}</b>
+
+                  <div align="right" style="margin-top: -22px;padding-right: 6px;">
+                    <ion-icon ios="ios-refresh-circle" md="md-refresh-circle" style="color:#ff7200;font-size: 1.65em;"
+                      (click)="refresh_alert()"></ion-icon>
+                  </div>
+
+                </div>
+
+              </ion-card>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </ion-list>
+
+
+
+    <ion-list *ngSwitchCase="'wisers'">
+
+      <ion-grid style="margin-left:-10px;margin-top: -8px;">
+        <ion-row>
+          <ion-col col-6 *ngFor="let post of wisers">
+            <!--align-self-start-->
+            <div>
+              <ion-card [ngStyle]="{'border-top-color':buttonColor, 'border-bottom-color':buttonColor, 'border-right-color':buttonColor, 'border-left-color':buttonColor}"
+                style="border-radius:12px 12px;width:100%; border-top: 2px solid; border-bottom: 2px solid; border-left: 2px solid; border-right: 2px solid;background-color:#f0f0f0">
+
+                <div align="center" style="padding-top:30px;padding-bottom:5px">
+                  <img src="{{post.image}}" style="width:51%" />
+                </div>
+
+
+                <ion-grid align="center">
+                  <ion-row>
+                    <ion-col col-10>
+                      <h4><b style="font-size: 1.2em;">//{{post.user_name}}</b></h4>
+                    </ion-col>
+                    <ion-col col-2 *ngIf="post.verified === '1' || post.verified === 1">
+                      <img src="imgs/tick.png" style="margin-top: 15px;" />
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+
+                <div align="center">
+                  <p style="color:black;font-size: 1em;">{{post.country}}</p>
+                  <img src="imgs/location.png" style="width: 24%;float: left;margin-top: -23px;padding-left: 20px;" />
+                </div>
+
+                <div align="center">
+                  <p style="color:black;font-size: 1.1em;">{{post.followers}}</p>
+                  <p style="color:#8c8c8c;font-size: 1.1em;">{{post.location}}</p>
+                </div>
+
+
+              </ion-card>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </ion-list>
+
+  </div>
+
 </ion-content>

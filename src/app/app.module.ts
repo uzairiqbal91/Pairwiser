@@ -16,6 +16,12 @@ import { SignupPage } from '../pages/signup/signup';
 import { SearchPage } from '../pages/search/search';
 import { SwipeSegmentDirective } from '../directives/swipe-segment/swipe-segment';
 import { EditProfilePage } from '../pages/edit-profile/edit-profile';
+import { OrderHistoryPage } from '../pages/order-history/order-history';
+import { NotificationsPage } from '../pages/notifications/notifications';
+import { SettingsPage } from '../pages/settings/settings';
+import { TermsPage } from '../pages/terms/terms';
+import { ResetPage } from '../pages/reset/reset';
+import { NewPasswordPage } from '../pages/new-password/new-password';
 
 
 @NgModule({
@@ -30,7 +36,13 @@ import { EditProfilePage } from '../pages/edit-profile/edit-profile';
     SignupPage,
     SearchPage,
     SwipeSegmentDirective,
-    EditProfilePage
+    EditProfilePage,
+    OrderHistoryPage,
+    NotificationsPage,
+    SettingsPage,
+    TermsPage,
+    ResetPage,
+    NewPasswordPage
   ],
   imports: [
     BrowserModule,
@@ -47,7 +59,13 @@ import { EditProfilePage } from '../pages/edit-profile/edit-profile';
     SigninPage,
     SignupPage,
     SearchPage,
-    EditProfilePage
+    EditProfilePage,
+    OrderHistoryPage,
+    NotificationsPage,
+    SettingsPage,
+    TermsPage,
+    ResetPage,
+    NewPasswordPage
   ],
   providers: [
     StatusBar,

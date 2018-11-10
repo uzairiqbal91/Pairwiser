@@ -1,0 +1,60 @@
+<ion-header class="ionic_toolbar">
+  <ion-navbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-4>
+          <ion-icon name="ios-menu-outline" style="color:white;" (click)="OnOpenMenu()"></ion-icon>
+        </ion-col>
+        <ion-col col-4><img src="imgs/logo.png" style="width:100%" /></ion-col>
+        <ion-col col-4></ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-navbar>
+  <div style="background-color: #2a3040">
+    <ion-segment [(ngModel)]="order">
+      <ion-segment-button value="active">
+        Active
+      </ion-segment-button>
+      <ion-segment-button value="history">
+        History
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+</ion-header>
+
+
+<ion-content>
+
+  <div [ngSwitch]="order" swipeSegment [tabsList]="categories" [(currentTab)]="category" (tabChanged)="onTabChanged($event)"
+    class="swipe-area">
+
+    <ion-list *ngSwitchCase="'active'">
+
+      <ion-card *ngFor="let post of order_history">
+        <ion-grid>
+          <ion-row>
+            <ion-col col-09>
+              <p style="color:#a6a6a6;font-size:1.0em">Order No: <b style="color:#464646;font-size:0.9em">{{post.order_no}}</b>
+              </p>
+            </ion-col>
+            <ion-col col-03>
+              <p style="color:#a6a6a6; text-align:right;font-size:0.9em">{{post.date}}</p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <p style="color:#a6a6a6;padding-left: 11px;;font-size:1.2em">Item: <b style="color:#464646;font-size:1.2em">{{post.item}}</b></p>
+        <h2 *ngIf="post.status === '1' || post.status === 1" style="color:#00c685;padding-left: 11px;;font-size:1.5em;padding-top: 5px;">Order delivered</h2>
+        <h2 *ngIf="post.status === '0' || post.status === 0" style="color:#0a7abc;padding-left: 11px;;font-size:1.5em;padding-top: 5px;">Order on delivery</h2>
+      </ion-card>
+
+
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'history'">
+
+    </ion-list>
+
+  </div>
+
+</ion-content>

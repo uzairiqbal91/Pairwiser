@@ -139,19 +139,19 @@
 
     <ion-list *ngSwitchCase="'sizes'">
 
-      <ion-grid style="width: 108%;margin-left: -18px;margin-top: -15px;">
+      <ion-grid style="width: 103%;margin-left: -22px;">
         <ion-row>
-          <ion-col col-3>
+          <ion-col col-3 *ngFor="let list of items, let i = index" style="margin-top: -20px;">
 
-            <ion-card (click)="sized1();" [ngStyle]="{'border-top-color':sizes1, 'border-bottom-color':sizes1, 'border-right-color':sizes1, 'border-left-color':sizes1}"
+            <ion-card (click)="sized1(i, list);" [ngStyle]="{'border-top-color':sizes2, 'border-bottom-color':sizes2, 'border-right-color':sizes2, 'border-left-color':sizes2}"
               style="border-top: 2px solid; border-bottom: 2px solid; border-left: 2px solid; border-right: 2px solid;width: 109%;height: 78px;">
               <div align="center">
-                <p style="color:#005aac;font-size: 2em;margin-top: 10px;">4</p>
+                <p style="color:#005aac;font-size: 2em;margin-top: 10px;">{{list}}</p>
               </div>
             </ion-card>
 
           </ion-col>
-          <ion-col col-3>
+          <!-- <ion-col col-3>
 
             <ion-card (click)="sized2();" [ngStyle]="{'border-top-color':sizes2, 'border-bottom-color':sizes2, 'border-right-color':sizes2, 'border-left-color':sizes2}"
               style="border-top: 2px solid; border-bottom: 2px solid; border-left: 2px solid; border-right: 2px solid;width: 103%;height: 78px;">
@@ -399,9 +399,9 @@
               <div align="center">
                 <p style="color:#005aac;font-size: 2em;margin-top: 10px;">15.5</p>
               </div>
-            </ion-card>
+            </ion-card> -->
 
-          </ion-col>
+         
         </ion-row>
       </ion-grid>
 

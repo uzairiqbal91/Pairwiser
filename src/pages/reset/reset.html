@@ -1,0 +1,49 @@
+<ion-content no-bounce>
+
+  <div align="center">
+    <img src="imgs/signin_page.png" />
+  </div>
+
+
+  <ion-list padding style="margin-top: 15px;">
+      <form novalidate (ngSubmit)="signup()" [formGroup]="signupform">
+  
+  <ion-item>
+      <ion-label>
+        <ion-icon name="ios-mail-outline"></ion-icon>
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="userData.email" formControlName="email" [class.error1]="!signupform.controls.email.valid && signupform.controls.email.dirty" placeholder="Email"></ion-input>
+    </ion-item>
+
+      <ion-item no-lines *ngIf="( signupform.get('email').hasError('minlength') || signupform.get('email').hasError('pattern') ||signupform.get('email').hasError('required') ) && signupform.get('email').touched">
+        <div class="error" *ngIf="signupform.get('email').hasError('required') && signupform.get('email').touched">
+          Please input your email
+        </div>
+        <div class="error" *ngIf="signupform.get('email').hasError('pattern') && signupform.get('email').touched">
+          Email address invalid
+        </div>
+      </ion-item>
+
+      <div *ngIf="signupform.invalid" align="center" style="padding-left:15px; padding-right:15px;margin-top: 20px;">
+          <button ion-button round full style="border-top: 2px solid; border-bottom: 2px solid; border-left: 2px solid; border-right: 2px solid;" [ngStyle]="{'background-color': buttonColor, 'color': buttonColor2}">Reset Password</button>
+          </div>
+
+      <div align="center" *ngIf="!signupform.invalid" style="padding-left:15px; padding-right:15px;margin-top: 20px;">
+        <button ion-button round full  type="submit" ion-button block color="signin_button"><b style="color:white">Reset Password</b></button>
+        </div>
+
+        
+    </form>
+  </ion-list>
+
+  <div align="center">
+    <p>Please insert your registered email and submit. Please check your email for further instructions.</p>
+  </div>
+
+
+  <div align="center" style="margin-top: 120px;">
+      <p style="margin-top:40px">By using this application you agree to our</p>
+      <p style="margin-top:-10px"><b style="color:#0077c8">Terms of Use</b>&nbsp;and&nbsp;<b style="color:#0077c8">Privacy Policy</b></p>
+    </div>
+
+</ion-content>

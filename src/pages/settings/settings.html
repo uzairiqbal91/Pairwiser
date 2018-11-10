@@ -1,0 +1,64 @@
+<ion-header class="ionic_toolbar">
+    <ion-navbar>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-4>
+            <ion-icon name="ios-menu-outline" style="color:white;" (click)="OnOpenMenu()"></ion-icon>
+          </ion-col>
+          <ion-col col-4><img src="imgs/logo.png" style="width:100%" /></ion-col>
+          <ion-col col-4></ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-navbar>
+  </ion-header>
+
+
+<ion-content style="background-color:#eeedf4">
+   
+    <ion-list style="margin-top: 22px;">
+    
+        <ion-item>
+            Edit Profile
+          <ion-icon name="arrow-forward" item-end></ion-icon>
+        </ion-item>
+
+        <ion-item>
+              <ion-label>on-screen pop up messages</ion-label>
+              <ion-toggle checked="true" item-end></ion-toggle>
+          </ion-item>
+
+          <ion-item>
+                <ion-label>Email Notifications</ion-label>
+                <ion-toggle checked="false" item-end></ion-toggle>
+            </ion-item>
+
+            <ion-item> 
+                  <ion-label>Notification Sounds</ion-label>
+                  <ion-toggle checked="true" item-end></ion-toggle>
+              </ion-item>
+   
+      </ion-list>
+
+      <ion-list style="margin-top: 22px;">
+    
+          <ion-item (click)="terms()">
+              Terms of service
+            <ion-icon name="arrow-forward" item-end></ion-icon>
+          </ion-item>
+     
+        </ion-list>
+
+        <ion-list style="margin-top: 22px;">
+    
+            <ion-item>
+                in-app purchase
+              <ion-icon name="arrow-forward" item-end></ion-icon>
+            </ion-item>
+            <ion-item>
+                Change password
+              <ion-icon name="arrow-forward" item-end></ion-icon>
+            </ion-item>
+       
+          </ion-list>
+    
+</ion-content>
