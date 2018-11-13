@@ -16,6 +16,9 @@ import { SignupPage } from '../pages/signup/signup';
 import { SearchPage } from '../pages/search/search';
 import { SwipeSegmentDirective } from '../directives/swipe-segment/swipe-segment';
 import { EditProfilePage } from '../pages/edit-profile/edit-profile';
+
+//import { CreditCardPage } from '../pages/credit-card/credit-card';
+
 import { OrderHistoryPage } from '../pages/order-history/order-history';
 import { NotificationsPage } from '../pages/notifications/notifications';
 import { SettingsPage } from '../pages/settings/settings';
@@ -27,6 +30,15 @@ import { CheckoutPage } from '../pages/checkout/checkout';
 import { DispatchPage } from '../pages/dispatch/dispatch';
 import { FiltersPage } from '../pages/filters/filters';
 import { InboxPage } from '../pages/inbox/inbox';
+
+// import { NativeStorage } from '@ionic-native/native-storage';
+// import { Camera, CameraOptions } from '@ionic-native/camera';
+// import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
+// import { File } from '@ionic-native/file';
+// import { HttpModule } from '@angular/http';
+
+//3d Side menu
+//import { ExtendMenuProvider } from '../providers/extend-menu/extend-menu';
 
 
 @NgModule({
@@ -52,10 +64,13 @@ import { InboxPage } from '../pages/inbox/inbox';
     CheckoutPage,
     DispatchPage,
     FiltersPage,
-    InboxPage
+    InboxPage,
+   // CreditCardPage
+    
   ],
   imports: [
     BrowserModule,
+   // HttpModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -80,11 +95,16 @@ import { InboxPage } from '../pages/inbox/inbox';
     CheckoutPage,
     DispatchPage,
     FiltersPage,
-    InboxPage
+    InboxPage,
+  //  CreditCardPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+ //   Camera,
+  //  File,
+  //  FileTransfer,
+  //  NativeStorage,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

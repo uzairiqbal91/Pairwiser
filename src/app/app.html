@@ -1,4 +1,4 @@
-<ion-menu side="left" type="push" [content]="nav" [swipeEnabled]="false">
+<ion-menu type="3d" class="fullWidthMenu" side="left" type="push" [content]="nav" [swipeEnabled]="false">
 
   <ion-header>
   </ion-header>
@@ -10,7 +10,7 @@
     <div style="margin-top: 30%;">
 
       <p style="color:grey;padding-left:40px;font-size:1.5em" (click)="OnLoad(home)">Home</p>
-      <p style="color:grey;padding-left:40px;font-size:1.5em" (click)="OnLoad(profile)">Profile</p>
+      <p style="color:grey;padding-left:40px;font-size:1.5em" (click)="OnLoad(profile)">Profile</p>   <!-- (click)="OnLoad(profile)" -->
       <p style="color:grey;padding-left:40px;font-size:1.5em;padding-top:7px" (click)="OnLoad(inbox)">Message</p>
       <p style="color:grey;padding-left:40px;font-size:1.5em;padding-top:7px" (click)="OnLoad(notification)">Notification</p>
       <p style="color:grey;padding-left:40px;font-size:1.5em;padding-top:7px" (click)="OnLoad(order)">Order History</p>
@@ -38,6 +38,7 @@
         </div>
   </ion-footer>
 </ion-menu>
+
 
 
 <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
