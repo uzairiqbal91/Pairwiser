@@ -1,0 +1,42 @@
+page-dispatch {
+    .toolbar-background-md {
+        color: white;
+        background-color: #98979f;
+    }
+
+    .header{
+        background-image: url('../assets/imgs/5.png');
+        width: 100%;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    .alert-md .alert-wrapper {
+        border-radius: 12px 12px;
+        max-width: 280px;
+        background-color: #fafafa;
+       // background-opacity:;
+         opacity: 0.7;
+        -webkit-box-shadow: 0 16px 20px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 16px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .alert-ios .alert-button {
+        /* padding-left: 16px; */
+        border-radius: 12px 12px;
+        overflow: hidden;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1 1 auto;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        min-width: 50%;
+        height: 47px;
+        border-top: 0.55px solid #dbdbdf;
+        border-right: 0.55px solid #dbdbdf;
+        font-size: 17px;
+        color: #488aff;
+        background-color: transparent;
+    }
+}

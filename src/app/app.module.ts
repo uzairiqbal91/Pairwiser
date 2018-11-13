@@ -22,6 +22,11 @@ import { SettingsPage } from '../pages/settings/settings';
 import { TermsPage } from '../pages/terms/terms';
 import { ResetPage } from '../pages/reset/reset';
 import { NewPasswordPage } from '../pages/new-password/new-password';
+import { DeliveryPage } from '../pages/delivery/delivery';
+import { CheckoutPage } from '../pages/checkout/checkout';
+import { DispatchPage } from '../pages/dispatch/dispatch';
+import { FiltersPage } from '../pages/filters/filters';
+import { InboxPage } from '../pages/inbox/inbox';
 
 
 @NgModule({
@@ -42,7 +47,12 @@ import { NewPasswordPage } from '../pages/new-password/new-password';
     SettingsPage,
     TermsPage,
     ResetPage,
-    NewPasswordPage
+    NewPasswordPage,
+    DeliveryPage,
+    CheckoutPage,
+    DispatchPage,
+    FiltersPage,
+    InboxPage
   ],
   imports: [
     BrowserModule,
@@ -65,7 +75,12 @@ import { NewPasswordPage } from '../pages/new-password/new-password';
     SettingsPage,
     TermsPage,
     ResetPage,
-    NewPasswordPage
+    NewPasswordPage,
+    DeliveryPage,
+    CheckoutPage,
+    DispatchPage,
+    FiltersPage,
+    InboxPage
   ],
   providers: [
     StatusBar,

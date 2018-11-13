@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, MenuController } from 'ionic-angular';
+import { FiltersPage } from '../filters/filters';
 
 
 @Component({
@@ -17,15 +18,32 @@ export class HomePage {
   sizes3 : string = 'lightgrey';
   sizes4 : string = 'lightgrey';
 
-
+  //for onclick bg color change
+  selected = "";
+  selected_size = "";
 
   public pairs: string = 'discover';
   public categories: Array<string> = ['discover', 'sizes', 'brands']
   items: string[];
   myObj: { "value": string; "is_active": string; }[];
+  products: { "image": string; "product_name": string; "price": string; }[];
   
 
   constructor(public navCtrl: NavController,private menuCtrl: MenuController) {
+    
+
+    this.products = [
+   
+      { "image":"imgs/shoes.png", "product_name":"Red wing moc toe", "price":"190"},
+      { "image":"imgs/shoe1.png", "product_name":"Red wing moc toe", "price":"190"},
+      { "image":"imgs/shoe4.png", "product_name":"Red wing moc toe", "price":"190"},
+      { "image":"imgs/shoe3.png", "product_name":"Red wing moc toe", "price":"190"},
+      { "image":"imgs/shoes.png", "product_name":"Red wing moc toe", "price":"190"},
+      { "image":"imgs/shoe1.png", "product_name":"Red wing moc toe", "price":"190"},
+      { "image":"imgs/shoe4.png", "product_name":"Red wing moc toe", "price":"190"},
+      
+  ]
+  
     this.items = [
       '4',
       '4.5',
@@ -53,19 +71,12 @@ export class HomePage {
       '15.5',
     ];
 
- 
-  this.myObj = [
-   
-        { "value":"4", "is_active":"0" },
-        { "value":"4.5", "is_active":"0" },
-        { "value":"5", "is_active":"0" },
-        { "value":"5.5", "is_active":"0" },
-    ]
- 
-
   }
 
-  
+  filter()
+  {
+    this.navCtrl.push(FiltersPage);
+  }
   
   OnOpenMenu()
   {
@@ -76,39 +87,13 @@ export class HomePage {
     this.pairs = tabName;
   }
 
-  addEvent1(){
+  addEvent1(index:string){
     console.log("event 1 called");
-    this.buttonColor = '#f9c04c';
-    this.buttonColor1 = 'lightgrey';
-    this.buttonColor2 = 'lightgrey';
-    this.buttonColor3 = 'lightgrey';
+    console.log("Index :" + index);
+    this.selected = index;
     }
 
-    addEvent2(){
-      console.log("event 2 called");
-      this.buttonColor1 = '#f9c04c';
-      this.buttonColor = 'lightgrey';
-      this.buttonColor2 = 'lightgrey';
-      this.buttonColor3 = 'lightgrey';
-      }
-
-      addEvent3(){
-        console.log("Called");
-        this.buttonColor2 = '#f9c04c';
-        this.buttonColor1 = 'lightgrey';
-        this.buttonColor = 'lightgrey';
-        this.buttonColor3 = 'lightgrey';
-        }
-
-        addEvent4(){
-          console.log("Called");
-          this.buttonColor3 = '#f9c04c';
-          this.buttonColor1 = 'lightgrey';
-          this.buttonColor2 = 'lightgrey';
-          this.buttonColor = 'lightgrey';
-          }
-
-
+  
           //Coding for Shoe Sizes
           //Grid 1
           sized1(index:string, is_active: string)
@@ -116,13 +101,7 @@ export class HomePage {
             console.log("Sized 1 Called");
             console.log("Printing index:" + index);
             console.log("Printing is_active" + is_active);
-          //  this.sizes2[value] = '#f9c04c';
-           // this.sizes2 = this.sizes1;
-             
-           
-            // this.sizes2 = 'lightgrey';
-            // this.sizes3 = 'lightgrey';
-            // this.sizes4 = 'lightgrey';
+            this.selected_size = index;
           }
 
 }

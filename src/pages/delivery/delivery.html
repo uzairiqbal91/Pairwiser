@@ -1,0 +1,35 @@
+<ion-header class="ionic_toolbar">
+  <ion-navbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-4>
+          <ion-icon name="ios-menu-outline" style="color:white;padding-left:5px" (click)="OnOpenMenu()"></ion-icon>
+        </ion-col>
+        <ion-col col-4><img src="imgs/logo.png" style="width:100%;margin-top: 5px;"/></ion-col>
+        <ion-col col-4></ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="header" padding no-bounce>
+
+<div align="center" style="margin-top: 60px;" *ngFor="let post of delivery">
+  <h2>Delivery</h2>
+  <ion-avatar>
+    <img src="{{post.image}}" style="width: 40%;"/>
+  </ion-avatar>
+
+  <p style="font-size:1.1em">Your <b>{{post.product_name}}</b> has been dispached </p>
+
+  <p style="margin-left: -150px;font-size:1.1em">By</p>
+
+  <ion-card style="background-color: #f9c04c; color:white; width: 36%; padding: 5px; font-size: 1.3em; margin-top: -39px;">//{{post.username}}</ion-card>
+
+  <button ion-button round full style="background-color:#0073b9" style="width:80%;margin-top:20px" (click)="confirm()"> Recieved </button>
+
+</div>
+
+
+</ion-content>

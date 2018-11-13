@@ -148,7 +148,7 @@
       <!--button type="submit" ion-button block color="primary" [disabled]="signupform.invalid">SIGNUP</button-->
 
       <div *ngIf="signupform.invalid" align="center" style="padding-left:15px; padding-right:15px;padding-top:10px">
-          <button ion-button round full style="border-top: 2px solid; border-bottom: 2px solid; border-left: 2px solid; border-right: 2px solid;" [ngStyle]="{'background-color': buttonColor, 'color': buttonColor2}">Create Account</button>
+          <button ion-button round full style="border-top: 2px solid; border-bottom: 2px solid; border-left: 2px solid; border-right: 2px solid;" [disabled]="signupform.invalid" [ngStyle]="{'background-color': buttonColor, 'color': buttonColor2}">Create Account</button>
           </div>
 
       <div align="center" *ngIf="!signupform.invalid" style="padding-left:15px; padding-right:15px; padding-top:10px">

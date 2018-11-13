@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, MenuController, AlertController } from 'ionic-angular';
+import { SettingsPage } from '../settings/settings';
 
 @Component({
   selector: 'page-about',
@@ -67,6 +68,10 @@ export class AboutPage {
         confirm.present();
       }
       
+      settings()
+      {
+        this.navCtrl.setRoot(SettingsPage);
+      }
 
 
 }

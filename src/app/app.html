@@ -1,4 +1,4 @@
-<ion-menu side="left" type="push" [content]="nav">
+<ion-menu side="left" type="push" [content]="nav" [swipeEnabled]="false">
 
   <ion-header>
   </ion-header>
@@ -9,8 +9,9 @@
 
     <div style="margin-top: 30%;">
 
-      <p style="color:grey;padding-left:40px;font-size:1.5em">Profile</p>
-      <p style="color:grey;padding-left:40px;font-size:1.5em;padding-top:7px">Message</p>
+      <p style="color:grey;padding-left:40px;font-size:1.5em" (click)="OnLoad(home)">Home</p>
+      <p style="color:grey;padding-left:40px;font-size:1.5em" (click)="OnLoad(profile)">Profile</p>
+      <p style="color:grey;padding-left:40px;font-size:1.5em;padding-top:7px" (click)="OnLoad(inbox)">Message</p>
       <p style="color:grey;padding-left:40px;font-size:1.5em;padding-top:7px" (click)="OnLoad(notification)">Notification</p>
       <p style="color:grey;padding-left:40px;font-size:1.5em;padding-top:7px" (click)="OnLoad(order)">Order History</p>
       <p style="color:grey;padding-left:40px;font-size:1.5em;padding-top:7px">Feedback</p>
@@ -19,7 +20,7 @@
     </div>
 
   </ion-content>
- 
+  
   <ion-footer no-border>
       <div align="center">
           <ion-grid>

@@ -3,7 +3,88 @@ page-home {
         color: white;
         background-color: #98979f;
     }
+
+    
 }
+
+.container {
+    justify-content: space-evenly;
+  }
+
+  .change-color
+  {
+    border-radius: 12px 12px;
+    border-top-color:lightgrey !important;
+    border-bottom-color:lightgrey !important;
+    border-right-color:lightgrey !important;
+    border-left-color:lightgrey !important;
+    border-radius:12px 12px;
+    border-top: 4px solid;
+    border-bottom: 4px solid; 
+    border-left: 4px solid;
+    border-right: 4px solid;
+    width: 96%;
+        margin-top: -8px;
+  }
+
+//onclick change bg
+  .highlight
+  {
+    border-radius: 12px 12px;
+    border-top-color:#f9c04c !important;
+    border-bottom-color:#f9c04c !important;
+    border-right-color:#f9c04c !important;
+    border-left-color:#f9c04c !important;
+    border-radius:12px 12px;
+    border-top: 4px solid;
+    border-bottom: 4px solid; 
+    border-left: 4px solid;
+    border-right: 4px solid; 
+    width: 96%;
+        margin-top: -8px;
+  }
+
+  .box_sizes{
+    border-top: 2px solid;
+    border-bottom: 2px solid; 
+    border-left: 2px solid; 
+    border-right: 2px solid;
+    width: 109%;
+    height: 78px;
+    border-top-color:lightgrey !important;
+    border-bottom-color:lightgrey !important;
+    border-right-color:lightgrey !important;
+    border-left-color:lightgrey !important;
+   // width: calc(100% - 16px);
+    font-size: 1.4rem;
+    background: #fff;
+    -webkit-box-shadow: 2px 2px 2px 2px lightgrey lightgrey lightgrey lightgrey;
+    box-shadow: 2px 2px 2px 2px lightgrey lightgrey lightgrey lightgrey;
+  }
+
+  .highlight_box_size{
+    border-top: 2px solid;
+    border-bottom: 2px solid; 
+    border-left: 2px solid; 
+    border-right: 2px solid;
+    width: 109%;
+    height: 78px;
+    border-top: 2px solid;
+    border-bottom: 2px solid; 
+    border-left: 2px solid;
+    border-right: 2px solid;
+    border-top-color:#f9c04c !important;
+    border-bottom-color:#f9c04c !important;
+    border-right-color:#f9c04c !important;
+    border-left-color:#f9c04c !important;
+   // width: calc(100% - 16px);
+    font-size: 1.4rem;
+    background: #fff;
+    -webkit-box-shadow: 2px 2px 2px 2px lightgrey lightgrey lightgrey lightgrey;
+    box-shadow: 2px 2px 2px 2px lightgrey lightgrey lightgrey lightgrey;
+  }
+  
+  
 
 .tabs-md .tabbar {
     background: black;
@@ -78,9 +159,6 @@ ion-icon {
       bottom:0px;
   }
 
-//   .ion-card {
-//     border-bottom: 3px solid #f9c04c
-//  }
 
  .has-card {
     border-top: 2px solid lightgray;
@@ -103,39 +181,6 @@ ion-icon {
 //    //  box-shadow: inset 0 -1px 0 0 #f9c04; 
 //  }
 
-
-//staggered view example
-.red {
-    background-color: rgba(220, 83, 81, 1);
- }
- 
- .green {
-    background-color: rgba(187, 225, 123, 1);
- }
- 
- .blue {
-    background-color: rgba(131, 150, 225, 1);
- }
- 
- .purple {
-    background-color: rgba(155, 121, 170, 1);
- }
- 
- .yellow {
-    background-color: rgba(235, 229, 39, 1);
- }
- 
- .violet {
-    background-color: rgba(213, 118, 211, 1);
- }
- 
- .orange {
-    background-color: rgba(213, 151, 46, 1);
- }
- 
- .turquoise {
-    background-color: rgba(105, 203, 217, 1);
- }
 
 
  //for full screen boxes for Size segment

@@ -1,0 +1,223 @@
+page-home {
+    .toolbar-background-md {
+        color: white;
+        background-color: #98979f;
+    }
+
+    
+}
+
+.container {
+    justify-content: space-evenly;
+  }
+
+  .change-color
+  {
+    border-radius: 12px 12px;
+    border-top-color:lightgrey !important;
+    border-bottom-color:lightgrey !important;
+    border-right-color:lightgrey !important;
+    border-left-color:lightgrey !important;
+    border-radius:12px 12px;
+    border-top: 4px solid;
+    border-bottom: 4px solid; 
+    border-left: 4px solid;
+    border-right: 4px solid;
+  }
+
+//onclick change bg
+  .highlight
+  {
+    border-radius: 12px 12px;
+    border-top-color:#f9c04c !important;
+    border-bottom-color:#f9c04c !important;
+    border-right-color:#f9c04c !important;
+    border-left-color:#f9c04c !important;
+    border-radius:12px 12px;
+    border-top: 4px solid;
+    border-bottom: 4px solid; 
+    border-left: 4px solid;
+    border-right: 4px solid; 
+  }
+
+  .box_sizes{
+    border-top: 2px solid;
+    border-bottom: 2px solid; 
+    border-left: 2px solid; 
+    border-right: 2px solid;
+    width: 109%;
+    height: 78px;
+    border-top-color:lightgrey !important;
+    border-bottom-color:lightgrey !important;
+    border-right-color:lightgrey !important;
+    border-left-color:lightgrey !important;
+   // width: calc(100% - 16px);
+    font-size: 1.4rem;
+    background: #fff;
+    -webkit-box-shadow: 2px 2px 2px 2px lightgrey lightgrey lightgrey lightgrey;
+    box-shadow: 2px 2px 2px 2px lightgrey lightgrey lightgrey lightgrey;
+  }
+
+  .highlight_box_size{
+    border-top: 2px solid;
+    border-bottom: 2px solid; 
+    border-left: 2px solid; 
+    border-right: 2px solid;
+    width: 109%;
+    height: 78px;
+    border-top: 2px solid;
+    border-bottom: 2px solid; 
+    border-left: 2px solid;
+    border-right: 2px solid;
+    border-top-color:#f9c04c !important;
+    border-bottom-color:#f9c04c !important;
+    border-right-color:#f9c04c !important;
+    border-left-color:#f9c04c !important;
+   // width: calc(100% - 16px);
+    font-size: 1.4rem;
+    background: #fff;
+    -webkit-box-shadow: 2px 2px 2px 2px lightgrey lightgrey lightgrey lightgrey;
+    box-shadow: 2px 2px 2px 2px lightgrey lightgrey lightgrey lightgrey;
+  }
+  
+  
+
+.tabs-md .tabbar {
+    background: black;
+}
+
+.tabbar.show-tabbar {
+   // opacity: 1;
+    opacity: 0.50;
+}
+
+.tabs-md .tab-button[aria-selected=true] .tab-button-icon {
+    color: #f9c04c;
+    -webkit-transform: translate3d(0, -2px, 0);
+    transform: translate3d(0px, -1px, 0px);
+}
+
+.tabs-md .tab-button-icon {
+    margin-top: 1px;
+    min-width: 1.4rem;
+    font-size: 3.0rem;
+    color: white;
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    transition: -webkit-transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+    -webkit-transform-origin: 50% 150%;
+    transform-origin: 50% 150%;
+}
+
+
+ion-icon {
+    display: inline-block;
+    font-size: 2.2em;
+}
+
+.segment-md .segment-button.activated, .segment-md .segment-button.segment-activated {
+    border-color: #f9c04c;
+    opacity: 1;
+}
+
+.segment-md .segment-button {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    width: 0;
+    height: 4.2rem;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: rgba(0, 0, 0, 0.1);
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 4rem;
+    text-transform: uppercase;
+    color: white;
+    background-color: transparent;
+    opacity: 0.7;
+    -webkit-transition: 100ms all linear;
+    transition: 100ms all linear;
+    padding: 0 6px;
+}
+
+
+//Experiment
+.swipe-area {
+    height:100%;
+    width:100%;
+  }
+
+  .card_content
+  {
+      bottom:0px;
+  }
+
+
+ .has-card {
+    border-top: 2px solid lightgray;
+    border-bottom: 2px solid lightgray;
+    border-left: 2px solid lightgray;
+    border-right: 2px solid lightgray;
+ }
+
+ .is-selected
+ {
+    border-top: 3px solid;
+    border-bottom: 3px solid;
+    border-left: 3px solid;
+    border-right: 3px solid;
+ }
+
+//  .item-md.item-input.iten-input-has-focus.item-inner, .item-md.item-input.input-has-focus.item-inner
+//  {
+//      border-bottom-color: #f9c04c;
+//    //  box-shadow: inset 0 -1px 0 0 #f9c04; 
+//  }
+
+
+
+ //for full screen boxes for Size segment
+ .full-screen {
+    height: 100%;
+    border: 2px solid black;
+  }
+
+  .full-screen-row {
+    height: 50%;
+  }
+
+  [col-4] {
+    padding: 0px;
+}
+
+
+
+//for Brands segment:
+.card-background-page {
+
+    ion-card {
+      position: relative;
+      text-align: center;
+    }
+    .card-title {
+        position: absolute;
+        top: 36%;
+        font-size: 2.0em;
+        width: 100%;
+        font-weight: bold;
+        color: #fff;
+      }
+    
+      .card-subtitle {
+        font-size: 1.0em;
+        position: absolute;
+        top: 52%;
+        width: 100%;
+        color: #fff;
+      }
+    
+    }
+ 
