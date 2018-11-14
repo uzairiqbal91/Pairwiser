@@ -1,0 +1,25 @@
+page-uploadlistings {
+    ion-label {
+        margin: 0;
+        display: block;
+        overflow: initial;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        font-size: inherit;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    #myInput {
+        width: calc(100% - 10px);
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+    }
+
+    .item-md.item-toggle ion-label {
+        margin-left: 9px;
+    }
+}

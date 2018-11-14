@@ -34,13 +34,13 @@ export class HomePage {
 
     this.products = [
    
-      { "image":"imgs/shoes.png", "product_name":"Red wing moc toe", "price":"190"},
-      { "image":"imgs/shoe1.png", "product_name":"Red wing moc toe", "price":"190"},
-      { "image":"imgs/shoe4.png", "product_name":"Red wing moc toe", "price":"190"},
-      { "image":"imgs/shoe3.png", "product_name":"Red wing moc toe", "price":"190"},
-      { "image":"imgs/shoes.png", "product_name":"Red wing moc toe", "price":"190"},
-      { "image":"imgs/shoe1.png", "product_name":"Red wing moc toe", "price":"190"},
-      { "image":"imgs/shoe4.png", "product_name":"Red wing moc toe", "price":"190"},
+      { "image":"imgs/shoes.png", "product_name": "Red wing moc toe", "price":"190"},
+      { "image":"imgs/shoes.png", "product_name": "Red wing moc toe", "price":"190"},
+      { "image":"imgs/shoes2.png", "product_name":"Red wing moc toe", "price":"190"},
+      { "image":"imgs/shoes2.png", "product_name":"Red wing moc toe", "price":"190"},
+      { "image":"imgs/shoes.png", "product_name": "Red wing moc toe", "price":"190"},
+      { "image":"imgs/shoes2.png", "product_name":"Red wing moc toe", "price":"190"},
+      { "image":"imgs/shoes.png", "product_name": "Red wing moc toe", "price":"190"},
       
   ]
   
@@ -70,7 +70,6 @@ export class HomePage {
       '15',
       '15.5',
     ];
-
   }
 
   filter()
@@ -87,9 +86,11 @@ export class HomePage {
     this.pairs = tabName;
   }
 
-  addEvent1(index:string){
-    console.log("event 1 called");
-    console.log("Index :" + index);
+  addEvent1(index:string, image:string, product_name:string, price:string){
+    console.log("Image:" + image);
+    console.log("Product_name: " + product_name);
+    console.log("Price:" + price);
+    console.log("At Index:" + index);
     this.selected = index;
     }
 
@@ -102,6 +103,8 @@ export class HomePage {
             console.log("Printing index:" + index);
             console.log("Printing is_active" + is_active);
             this.selected_size = index;
+
+            //selected data from index will go forward
           }
 
 }

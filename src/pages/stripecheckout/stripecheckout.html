@@ -1,0 +1,89 @@
+<ion-content no-bounce>
+  <div style="background-color:#2a3040">
+    <ion-icon name="arrow-back" start style="color:white;padding-left:6px;padding-top:6px" (click)="back()"></ion-icon>
+    <div style="margin-top: -41px;" align="center">
+      <p style="font-size:1.3em;color:white;padding-bottom:8px">CHECKOUT</p>
+    </div>
+  </div>
+
+  <div align="center" style="background-color:#2a3040;margin-top: -20px;padding-bottom:5px">
+    <p style="color:#8e94a4;padding-top: 40px;">TOTAL PRICE</p>
+    <p style="color:#c9cfdf;float: left;margin-left: 100px;font-size: 1.2em;">$</p>
+    <p style="font-size:4em; color:#d4d3db;margin-right: 107px;margin-top: -2px;">2245</p>
+  </div>
+
+
+
+
+
+  <ion-list padding no-lines>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col col-12>
+          <ion-item>
+            <ion-label stacked style="color:#858585">NAME ON CARD</ion-label>
+            <ion-input type="number" placeholder="" [(ngModel)]="cardNumber"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+    <ion-grid>
+      <ion-row>
+        <ion-col col-8>
+          <ion-item>
+            <ion-label stacked style="color:#858585">CARD NUMBER</ion-label>
+            <ion-input type="number" placeholder="" [(ngModel)]="cardNumber"></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <ion-col col-4 align="right" style="margin-top: 24px;">
+          <img src="imgs/master_card.png" style="width:35%" />
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col col-4>
+          <ion-item no-lines>
+            <ion-label stacked style="color:#858585">EXPIRY DATE</ion-label>
+            <ion-input type="number" placeholder="" [(ngModel)]="cardMonth"></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <ion-col col-6 style="margin-top: -5px;">
+          <ion-item no-lines>
+            <ion-label stacked style="color:#858585">SECURITY CODE</ion-label>
+            <!--ion-input type="number" placeholder="" [(ngModel)]="cardCVV"></ion-input-->
+            <ion-input type="{{type}}" name="password" ngModel #password="ngModel" required pattern=".{4,10}"></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <ion-col col-2>
+          <ion-icon *ngIf="!showPass" name="ios-eye-off-outline" (click)="showPassword()"></ion-icon>
+          <ion-icon *ngIf="showPass" name="ios-eye-outline" (click)="showPassword()"></ion-icon>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+  </ion-list>
+
+
+  <!-- <button ion-button block large (click)="validateCard()">Add Card</button> -->
+
+
+
+
+  <div align="center">
+    <!--button ion-button round full style="background-color:#f9c04c; color:white; width:80% " (click)="validateCard()">PAY $2245</button-->
+    <p>
+        <button ion-button round full style="background-color:#f9c04c; color:white; width:80% " (click)="validateCard()" icon-start>
+          <ion-icon name='ios-unlock-outline'></ion-icon>
+          PAY $2245
+        </button>
+  </div>
+
+</ion-content>

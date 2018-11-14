@@ -1,14 +1,14 @@
 <ion-header class="ionic_toolbar">
   <ion-navbar style="color:white">
     <ion-grid>
-        <ion-row>
-            <ion-col col-2>
-            </ion-col>
-            <ion-col col-6>
-              <div align="center">
-                <img src="imgs/logo.png" style="width:100%"/>
-              </div>
-            </ion-col>
+      <ion-row>
+        <ion-col col-2>
+        </ion-col>
+        <ion-col col-6>
+          <div align="center">
+            <img src="imgs/logo.png" style="width:100%" />
+          </div>
+        </ion-col>
         <ion-col col-4>
           <p style="float:right;color:white">CLEAR</p>
         </ion-col>
@@ -21,69 +21,63 @@
 <ion-content padding no-bounce>
 
 
- <div align="center">
+  <div align="center">
 
-    <ion-list-header no-lines>
-      <p><b>Posted</b></p>
-    </ion-list-header>
-    <ion-item no-lines>
-      <ion-range [(ngModel)]="posted">
-        <ion-label range-left class="small-text">20 Days</ion-label>
-        <ion-label range-right>All</ion-label>
+    <p style="font-size:1.1em">POSTED</p>
+    <ion-item no-lines style="margin-top: -28px;background-color: transparent;">
+      <ion-range min="20" max="100" pin="true" [(ngModel)]="posted" color="primary">
+        <ion-label range-left class="small-text" style="color:white">20</ion-label>
+        <ion-label range-right style="color:white">0</ion-label>
       </ion-range>
     </ion-item>
- 
-    <ion-list-header no-lines>
-      <p><b>Price</b></p>
-    </ion-list-header>
-    <ion-item no-lines>
+
+    <ion-grid style="margin-top: -37px;">
+      <ion-row>
+        <ion-col col-6>
+          <p style="text-align:left">20 Days</p>
+        </ion-col>
+        <ion-col col-6>
+          <p style="text-align:right">All</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <p style="font-size:1.1em">PRICE</p>
+    <ion-item no-lines style="margin-top: -28px;background-color: transparent;">
       <ion-range [(ngModel)]="prices">
       </ion-range>
     </ion-item>
 
 
+    <p>up to £140</p>
 
-    <!--ion-segment [(ngModel)]="button">
-        <ion-segment-button value="kittens">
-          Lowest First
-        </ion-segment-button>
-        <ion-segment-button value="puppies">
-          Highest First
-        </ion-segment-button>
-      </ion-segment-->
-
-      <!-- <ion-segment>
-          <ion-segment-button value="new">
-            New
-          </ion-segment-button>
-          <ion-segment-button value="hot">
-            Hot
-          </ion-segment-button>
-        </ion-segment> -->
+    <ion-segment [(ngModel)]="first" style="width: 70%;">
+      <ion-segment-button style="text-transform: none" value="lowest">
+        Lowest First
+      </ion-segment-button>
+      <ion-segment-button style="text-transform: none" value="highest">
+        Highest First
+      </ion-segment-button>
+    </ion-segment>
 
 
-        <p>CONDITION</p>
-        <ion-grid>
-          <ion-row>
-            <ion-col col-6>
-             <button ion-button round style="color:#0073b9;background-color:white">NEW</button>
-            </ion-col>
+    <div>
+      <p style="padding-top: 10px">CONDITION</p>
 
-            <ion-col col-6>
-                <button ion-button round style="color:white;background-color:#0073b9">USED</button>
-              </ion-col>
-          </ion-row>
-        </ion-grid>
+      <button [ngStyle]="{'background-color': buttonColor, 'color': textcolor}" ion-button round class="button-class" (click)="send1()">NEW</button>
+
+      <button [ngStyle]="{'background-color': buttonColor2, 'color': textcolor2}" ion-button round class="button-class" (click)="send2()">USED</button>
+    </div>
 
 
-        <ion-item no-lines>
-            <ion-label>AVAILABLE TO BUY</ion-label>
-            <ion-toggle checked="false"></ion-toggle>
-          </ion-item>
+    <ion-item style="margin-top: 20px;" no-lines>
+      <ion-label>AVAILABLE TO BUY</ion-label>
+      <ion-toggle checked="false"></ion-toggle>
+    </ion-item>
 
 
-          <button ion-button round full style="width:80%; color:white; background-color:#f9c04c;margin-top:25px">APPLY</button>
-</div>
+    <button ion-button round full style="width:80%; color:white; background-color:#f9c04c;margin-top:25px">APPLY</button>
+  </div>
 
 
 

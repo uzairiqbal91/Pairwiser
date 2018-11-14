@@ -31,11 +31,14 @@ import { DispatchPage } from '../pages/dispatch/dispatch';
 import { FiltersPage } from '../pages/filters/filters';
 import { InboxPage } from '../pages/inbox/inbox';
 
-// import { NativeStorage } from '@ionic-native/native-storage';
-// import { Camera, CameraOptions } from '@ionic-native/camera';
-// import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
-// import { File } from '@ionic-native/file';
-// import { HttpModule } from '@angular/http';
+import { NativeStorage } from '@ionic-native/native-storage';
+import { Camera, CameraOptions } from '@ionic-native/camera';
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
+import { File } from '@ionic-native/file';
+import { HttpModule } from '@angular/http';
+import { StripecheckoutPage } from '../pages/stripecheckout/stripecheckout';
+import { Stripe } from '@ionic-native/stripe';
+import { UploadlistingsPage } from '../pages/uploadlistings/uploadlistings';
 
 //3d Side menu
 //import { ExtendMenuProvider } from '../providers/extend-menu/extend-menu';
@@ -65,12 +68,14 @@ import { InboxPage } from '../pages/inbox/inbox';
     DispatchPage,
     FiltersPage,
     InboxPage,
+    StripecheckoutPage,
+    UploadlistingsPage
    // CreditCardPage
     
   ],
   imports: [
     BrowserModule,
-   // HttpModule,
+    HttpModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -96,15 +101,18 @@ import { InboxPage } from '../pages/inbox/inbox';
     DispatchPage,
     FiltersPage,
     InboxPage,
+    StripecheckoutPage,
+    UploadlistingsPage
   //  CreditCardPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
- //   Camera,
-  //  File,
-  //  FileTransfer,
-  //  NativeStorage,
+   Camera,
+   File,
+   FileTransfer,
+   NativeStorage,
+   Stripe,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

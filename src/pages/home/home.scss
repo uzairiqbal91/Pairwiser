@@ -3,8 +3,6 @@ page-home {
         color: white;
         background-color: #98979f;
     }
-
-    
 }
 
 .container {
@@ -14,17 +12,17 @@ page-home {
   .change-color
   {
     border-radius: 12px 12px;
-    border-top-color:lightgrey !important;
-    border-bottom-color:lightgrey !important;
-    border-right-color:lightgrey !important;
-    border-left-color:lightgrey !important;
+    border-top-color:#f4f4f4 !important;
+    border-bottom-color:#f4f4f4 !important;
+    border-right-color:#f4f4f4 !important;
+    border-left-color:#f4f4f4 !important;
     border-radius:12px 12px;
-    border-top: 4px solid;
-    border-bottom: 4px solid; 
-    border-left: 4px solid;
-    border-right: 4px solid;
+    border-top: 2px solid;
+    border-bottom: 2px solid; 
+    border-left: 2px solid;
+    border-right: 2px solid;
     width: 96%;
-        margin-top: -8px;
+    margin-top: -6px;
   }
 
 //onclick change bg
@@ -41,7 +39,7 @@ page-home {
     border-left: 4px solid;
     border-right: 4px solid; 
     width: 96%;
-        margin-top: -8px;
+    margin-top: -6px;
   }
 
   .box_sizes{

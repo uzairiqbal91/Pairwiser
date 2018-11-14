@@ -5,10 +5,15 @@
       <p style="font-size:1.3em;color:white;padding-bottom:8px">EDIT PROFILE</p>
     </div>
   </div>
-  <div align="center" style="background-color:#2a3040;margin-top: -20px;padding-bottom:20px">
+  <!-- <div align="center" style="background-color:#2a3040;margin-top: -20px;padding-bottom:20px">
     <ion-avatar (click)="presentActionSheet()">
       <img src="imgs/user_image.png" style="width:100%" />
     </ion-avatar>
+  </div> -->
+
+  <div align="center" style="background-color:#2a3040;margin-top: -20px;padding-bottom:20px" (click)="presentActionSheet()">
+    <img *ngIf="imageURI === undefined || imageURI === 'undefined'" src="imgs/default.png" style="width: 27%;"/>
+    <img *ngIf="imageURI != undefined || imageURI != 'undefined'" src="{{imageURI}}" style="width: 27%;"/>
   </div>
 
 
@@ -16,10 +21,10 @@
 
     <ion-list padding>
 
-        <ion-item style="display:none">
-            <ion-label floating>Username</ion-label>
-            <ion-input type="text"></ion-input>
-          </ion-item>
+      <ion-item style="display:none">
+        <ion-label floating>Username</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
 
       <ion-item>
         <ion-label floating>Username</ion-label>

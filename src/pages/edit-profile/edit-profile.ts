@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController, ActionSheetController, AlertController, ToastController } from 'ionic-angular';
 import { SettingsPage } from '../settings/settings';
-//import { Camera, CameraOptions } from '@ionic-native/camera';
-//import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
-//import { File } from '@ionic-native/file';
+import { Camera, CameraOptions } from '@ionic-native/camera';
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
+import { File } from '@ionic-native/file';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
-//import { NativeStorage } from '@ionic-native/native-storage';
+import { NativeStorage } from '@ionic-native/native-storage';
 
 @Component({
   selector: 'page-edit-profile',
@@ -16,7 +16,7 @@ export class EditProfilePage {
   url: string;
   imageURI: any;
 
-  constructor(public toastCtrl: ToastController, public actionSheetCtrl: ActionSheetController, public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController, private loadingCtrl: LoadingController, private http: Http)   //private transfer: FileTransfer, private camera: Camera, private nativeStorage: NativeStorage,
+  constructor(public toastCtrl: ToastController, public actionSheetCtrl: ActionSheetController, public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController, private loadingCtrl: LoadingController, private http: Http, private transfer: FileTransfer, private camera: Camera, private nativeStorage: NativeStorage)   //private transfer: FileTransfer, private camera: Camera, private nativeStorage: NativeStorage,
    {
   }
 
@@ -30,65 +30,64 @@ export class EditProfilePage {
   }
 
 
-  //upload image
-  //  public presentActionSheet() {
-  //   let actionSheet = this.actionSheetCtrl.create({
-  //     title: 'Select Image Source',
-  //     buttons: [
-  //       {
-  //         text: 'Load from Library',
-  //         handler: () => {
-  //           this.takePicture(this.camera.PictureSourceType.PHOTOLIBRARY);
-  //         }
-  //       },
-  //       {
-  //         text: 'Use Camera',
-  //         handler: () => {
-  //           this.takePicture(this.camera.PictureSourceType.CAMERA);
-  //           //this.Alertconfirm();
-  //         }
-  //       },
-  //       {
-  //         text: 'Cancel',
-  //         role: 'cancel'
-  //       }
-  //     ]
-  //   });
-  //   actionSheet.present();
+ // upload image
+   
+ public presentActionSheet() {
+    let actionSheet = this.actionSheetCtrl.create({
+      title: 'Select Image Source',
+      buttons: [
+        {
+          text: 'Load from Library',
+          handler: () => {
+            this.takePicture(this.camera.PictureSourceType.PHOTOLIBRARY);
+          }
+        },
+        {
+          text: 'Use Camera',
+          handler: () => {
+            this.takePicture(this.camera.PictureSourceType.CAMERA);
+            //this.Alertconfirm();
+          }
+        },
+        {
+          text: 'Cancel',
+          role: 'cancel'
+        }
+      ]
+    });
+    actionSheet.present();
     
-  //   }
+    }
     
-  //   public takePicture(sourceType) {
-  //   // Create options for the Camera Dialog
-  //   var options = {
-  //     quality: 100,
-  //     sourceType: sourceType,
-  //     saveToPhotoAlbum: false,
-  //     correctOrientation: true
-  //   };
+    public takePicture(sourceType) {
+    // Create options for the Camera Dialog
+    var options = {
+      quality: 100,
+      sourceType: sourceType,
+      saveToPhotoAlbum: false,
+      correctOrientation: true
+    };
     
-  //   // Get the data of an image
-  //   this.camera.getPicture(options).then((imagePath) => {
-  //     // Special handling for Android library
-  //    console.log("ImageURL from Source",imagePath)
-  //     this.imageURI = imagePath;
-  //     console.log("ImageURL ",this.imageURI)
-  //   }, (err) => {
-  //     this.presentToast('Error while selecting image.');
-  //   });
-  //   }
+    // Get the data of an image
+    this.camera.getPicture(options).then((imagePath) => {
+      // Special handling for Android library
+     console.log("ImageURL from Source",imagePath)
+      this.imageURI = imagePath;
+      console.log("ImageURL ",this.imageURI)
+    }, (err) => {
+      this.presentToast('Error while selecting image.');
+    });
+    }
     
-  //   private presentToast(text) {
-  //   let toast = this.toastCtrl.create({
-  //     message: text,
-  //     duration: 3000,
-  //     position: 'bottom'
-  //   });
-  //   toast.present();
-  //   }
-    
-  //   // Always get the accurate path to your apps folder
-    
+    private presentToast(text) {
+    let toast = this.toastCtrl.create({
+      message: text,
+      duration: 3000,
+      position: 'bottom'
+    });
+    toast.present();
+    }
+     
     
   //   public uploadImage() {
     

@@ -1,5 +1,5 @@
 import { Component,ViewChild } from '@angular/core';
-import { Platform, NavController, MenuController, Tabs } from 'ionic-angular';
+import { Platform, NavController, MenuController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -12,14 +12,13 @@ import { SettingsPage } from '../pages/settings/settings';
 
 import { AboutPage } from '../pages/about/about';
 import { InboxPage } from '../pages/inbox/inbox';
-import { EditProfilePage } from '../pages/edit-profile/edit-profile';
-//import { CreditCardPage } from '../pages/credit-card/credit-card';
+import { UploadlistingsPage } from '../pages/uploadlistings/uploadlistings';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = TabsPage;  //MainPage TabsPage CreditCardPage
+  rootPage:any = UploadlistingsPage;  //MainPage TabsPage
   @ViewChild('nav') nav: NavController;
 
   order = OrderHistoryPage;
@@ -27,7 +26,6 @@ export class MyApp {
   home = TabsPage;
   profile = AboutPage;
   inbox = InboxPage;
-
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,private menuCtrl: MenuController) {
     platform.ready().then(() => {
@@ -40,8 +38,6 @@ export class MyApp {
   openPage(page) {
     this.nav.setRoot(page.component);
   } 
-
-
 
   OnLoad(page: any)
   {
