@@ -4,25 +4,71 @@ page-contact {
         background-color: #98979f;
     }
 
-    .card-ios h3, .card-ios h4, .card-ios h5, .card-ios h6 {
-        margin: 11px 2px;
-        font-size: 1.8rem;
-        font-weight: normal;
+    .change-color
+    {
+      border-radius: 12px 12px;
+      border-top-color:#f4f4f4 !important;
+      border-bottom-color:#f4f4f4 !important;
+      border-right-color:#f4f4f4 !important;
+      border-left-color:#f4f4f4 !important;
+      border-radius:12px 12px;
+      border-top: 2px solid;
+      border-bottom: 2px solid; 
+      border-left: 2px solid;
+      border-right: 2px solid;
+      width: 96%;
+      margin-top: -6px;
+    }
+  
+
+    .change-color-wisers
+    {
+      border-radius: 12px 12px;
+      border-top-color:#f4f4f4 !important;
+      border-bottom-color:#f4f4f4 !important;
+      border-right-color:#f4f4f4 !important;
+      border-left-color:#f4f4f4 !important;
+      border-radius:12px 12px;
+      border-top: 2px solid;
+      border-bottom: 2px solid; 
+      border-left: 2px solid;
+      border-right: 2px solid;
+      width: 96%;
+      margin-top: -6px;
+    }
+  
+  
+  //onclick change bg
+    .highlight
+    {
+      border-radius: 12px 12px;
+      border-top-color:#ff7600 !important;
+      border-bottom-color:#ff7600 !important;
+      border-right-color:#ff7600 !important;
+      border-left-color:#ff7600 !important;
+      border-radius:12px 12px;
+      border-top: 4px solid;
+      border-bottom: 4px solid; 
+      border-left: 4px solid;
+      border-right: 4px solid; 
+      width: 96%;
+      margin-top: -6px;
     }
 
-    .grid {
-        padding: 0px;
-        margin-left: auto;
-        margin-right: auto;
-        width: 100%;
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-        flex-direction: column;
+    .highlight-wisers
+    {
+      border-radius: 12px 12px;
+      border-top-color:#ff7600 !important;
+      border-bottom-color:#ff7600 !important;
+      border-right-color:#ff7600 !important;
+      border-left-color:#ff7600 !important;
+      border-radius:12px 12px;
+      border-top: 4px solid;
+      border-bottom: 4px solid; 
+      border-left: 4px solid;
+      border-right: 4px solid; 
+      width: 96%;
+      margin-top: -6px;
     }
+  
 }

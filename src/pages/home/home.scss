@@ -2,7 +2,12 @@ page-home {
     .toolbar-background-md {
         color: white;
         background-color: #98979f;
-    }
+    }  
+}
+
+.new-header{
+    
+    background-color: #f4f4f4;
 }
 
 .container {
@@ -25,14 +30,15 @@ page-home {
     margin-top: -6px;
   }
 
+
 //onclick change bg
   .highlight
   {
     border-radius: 12px 12px;
-    border-top-color:#f9c04c !important;
-    border-bottom-color:#f9c04c !important;
-    border-right-color:#f9c04c !important;
-    border-left-color:#f9c04c !important;
+    border-top-color:#ff7600 !important;
+    border-bottom-color:#ff7600 !important;
+    border-right-color:#ff7600 !important;
+    border-left-color:#ff7600 !important;
     border-radius:12px 12px;
     border-top: 4px solid;
     border-bottom: 4px solid; 
@@ -42,12 +48,13 @@ page-home {
     margin-top: -6px;
   }
 
+
   .box_sizes{
     border-top: 2px solid;
     border-bottom: 2px solid; 
     border-left: 2px solid; 
     border-right: 2px solid;
-    width: 109%;
+    width: 117%;
     height: 78px;
     border-top-color:lightgrey !important;
     border-bottom-color:lightgrey !important;
@@ -61,20 +68,16 @@ page-home {
   }
 
   .highlight_box_size{
-    border-top: 2px solid;
-    border-bottom: 2px solid; 
-    border-left: 2px solid; 
-    border-right: 2px solid;
-    width: 109%;
+    border-top: 4px solid;
+    border-bottom: 4px solid; 
+    border-left: 4px solid; 
+    border-right: 4px solid;
+    width: 114%;
     height: 78px;
-    border-top: 2px solid;
-    border-bottom: 2px solid; 
-    border-left: 2px solid;
-    border-right: 2px solid;
-    border-top-color:#f9c04c !important;
-    border-bottom-color:#f9c04c !important;
-    border-right-color:#f9c04c !important;
-    border-left-color:#f9c04c !important;
+    border-top-color:#ff7600 !important;
+    border-bottom-color:#ff7600 !important;
+    border-right-color:#ff7600 !important;
+    border-left-color:#ff7600 !important;
    // width: calc(100% - 16px);
     font-size: 1.4rem;
     background: #fff;
@@ -94,7 +97,7 @@ page-home {
 }
 
 .tabs-md .tab-button[aria-selected=true] .tab-button-icon {
-    color: #f9c04c;
+    color: #ff7600;
     -webkit-transform: translate3d(0, -2px, 0);
     transform: translate3d(0px, -1px, 0px);
 }
@@ -223,3 +226,18 @@ ion-icon {
     
     }
  
+
+    //tabs custom icons
+    .tabs-md .tab-button-icon {
+        margin-top: -2px;
+        min-width: 1.4rem;
+        font-size: 2.5rem;
+        opacity: 0.85;
+        color: white;
+        -webkit-transition: -webkit-transform 0.3s ease-in-out;
+        transition: -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+        -webkit-transform-origin: 50% 150%;
+        transform-origin: 50% 150%;
+    }

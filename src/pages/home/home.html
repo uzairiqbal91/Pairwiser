@@ -5,7 +5,7 @@
         <ion-col col-4>
           <ion-icon name="ios-menu-outline" style="color:white;" (click)="OnOpenMenu()"></ion-icon>
         </ion-col>
-        <ion-col col-4><img src="imgs/logo.png" style="width:100%"/></ion-col>
+        <ion-col col-4><img src="imgs/logo.png" style="width:100%" /></ion-col>
         <ion-col col-4>
           <ion-icon name="ios-options-outline" style="color:white;float:right" (click)="filter()"></ion-icon>
         </ion-col>
@@ -27,13 +27,14 @@
   </div>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
   <!--div [ngSwitch]="pairs"-->
-  <div [ngSwitch]="pairs" swipeSegment [tabsList]="categories" [(currentTab)]="category" (tabChanged)="onTabChanged($event)" class="swipe-area">
+  <div [ngSwitch]="pairs" swipeSegment [tabsList]="categories" [(currentTab)]="category" (tabChanged)="onTabChanged($event)"
+    class="swipe-area">
 
     <ion-list *ngSwitchCase="'discover'">
 
-      <ion-grid style="margin-left: -6px;margin-top:15px" no-padding>
+      <ion-grid style="margin-left: -6px; margin-top:15px" no-padding>
         <!--style="margin-top: 10px;" -->
         <ion-row>
 
@@ -47,7 +48,7 @@
               </div>
 
               <div align="center" style="margin-top: 50px">
-                <img src="imgs/line.png"/>
+                <img src="imgs/line.png" />
               </div>
 
               <div style="margin-top: 10px;padding-bottom:15px">
@@ -58,22 +59,19 @@
                     (click)="refresh_alert()"></ion-icon>
                 </div>
               </div>
-
             </ion-card>
           </ion-col>
         </ion-row>
       </ion-grid>
-
-
     </ion-list>
 
 
     <ion-list *ngSwitchCase="'sizes'">
 
-      <ion-grid style="width: 100%;margin-left: -14px;padding-top: 15px;">
+      <ion-grid style="width: 100%;margin-left: -16px;padding-top: 15px;">
         <ion-row>
           <ion-col col-3 *ngFor="let list of items, let i = index">
-            <ion-card style="margin-top:-16px" (click)="sized1(i, list);" [class.highlight_box_size]="i === selected_size"
+            <ion-card style="margin-top:-18px" (click)="sized1(i, list);" [class.highlight_box_size]="i === selected_size"
               class="box_sizes">
               <div align="center">
                 <p style="color:#005aac;font-size: 2em;margin-top: 10px;">{{list}}</p>
@@ -105,20 +103,28 @@
 
       </div>
 
+      <div align="center">
+        <button ion-button full round style="color:white;background-color:#f9c04c;width:90%">ALL</button>
+      </div>
 
-      <ion-fab center>
+
+      <!-- <ion-fab center>
         <button ion-fab style="background-color:#f9c04c">
           <ion-icon ios="ios-add" md="md-add" style="color:white;zoom:2.0"></ion-icon>
         </button>
-      </ion-fab>
+      </ion-fab> -->
 
     </ion-list>
 
 
   </div>
 
-
-
-
-
 </ion-content>
+
+<!-- <ion-footer *ngIf="pairs === brands || pairs === 'brands'" style="background-color:transparent;margin-bottom:58px" no-lines>
+<div align="center">
+    <button ion-fab style="background-color:#f9c04c">
+        <ion-icon ios="ios-add" md="md-add" style="color:white;zoom:2.0"></ion-icon>
+      </button>
+</div>
+</ion-footer> -->

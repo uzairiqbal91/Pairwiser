@@ -3,19 +3,19 @@
   <ion-header>
   </ion-header>
 
-  <ion-content class="has-header">
+  <ion-content class="new-header">
 
-    <ion-icon ios="ios-close" md="md-close" style="padding-left:40px;color:grey;padding-top:10px" (click)="close()"></ion-icon>
+    <ion-icon ios="ios-close" md="md-close" style="padding-left:40px;color:grey;padding-top:30px" (click)="close()"></ion-icon>
 
-    <div style="margin-top: 20%;">
+    <div style="margin-top: 23%;">
 
-      <p style="color:grey;padding-left:40px;font-size:1.5em" (click)="OnLoad(home)">Home</p>
-      <p style="color:grey;padding-left:40px;font-size:1.5em" (click)="OnLoad(profile)">Profile</p>   <!-- (click)="OnLoad(profile)" -->
-      <p style="color:grey;padding-left:40px;font-size:1.5em;padding-top:7px" (click)="OnLoad(inbox)">Message</p>
-      <p style="color:grey;padding-left:40px;font-size:1.5em;padding-top:7px" (click)="OnLoad(notification)">Notification</p>
-      <p style="color:grey;padding-left:40px;font-size:1.5em;padding-top:7px" (click)="OnLoad(order)">Order History</p>
-      <p style="color:grey;padding-left:40px;font-size:1.5em;padding-top:7px">Feedback</p>
-      <p style="color:grey;padding-left:40px;font-size:1.5em;padding-top:7px">Contact Us</p>
+      <p style="color:grey;padding-left:40px;font-size:1.2em" (click)="OnLoad(home)"><b>Home</b></p>
+      <p style="color:grey;padding-left:40px;font-size:1.2em;padding-top:16px" (click)="OnLoad(profile)"><b>Profile</b></p>   <!-- (click)="OnLoad(profile)" -->
+      <p style="color:grey;padding-left:40px;font-size:1.2em;padding-top:16px" (click)="OnLoad(inbox)"><b>Message</b></p>
+      <p style="color:grey;padding-left:40px;font-size:1.2em;padding-top:16px" (click)="OnLoad(notification)"><b>Notification</b></p>
+      <p style="color:grey;padding-left:40px;font-size:1.2em;padding-top:16px" (click)="OnLoad(order)"><b>Order History</b></p>
+      <p style="color:grey;padding-left:40px;font-size:1.2em;padding-top:16px"><b>Feedback</b></p>
+      <p style="color:grey;padding-left:40px;font-size:1.2em;padding-top:16px"><b>Contact Us</b></p>
       
     </div>
 
@@ -27,11 +27,11 @@
             <ion-row>
               <ion-col col-6 (click)="settings()">
                 <ion-icon ios="ios-cog" md="md-cog" style="color:grey;"></ion-icon>
-                <p style="color:grey">Settings</p>
+                <p style="color:grey">SETTINGS</p>
               </ion-col>
               <ion-col col-6 (click)="logout()">
                 <ion-icon name="ios-log-out-outline" style="color:grey"></ion-icon>
-                <p style="color:grey">Logout</p>
+                <p style="color:grey">LOGOUT</p>
               </ion-col>
             </ion-row>
           </ion-grid>

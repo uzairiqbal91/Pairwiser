@@ -12,6 +12,8 @@ export class ContactPage {
   products: { "image": string; "product_name": string; "price": string; }[];
   wisers: { "image": string; "user_name": string; "country": string; "followers": string; "location": string; "verified": string; }[];
   
+  selected = "";
+  selwisers = "";
   
 
   constructor(private menuCtrl: MenuController, public navCtrl: NavController) {
@@ -28,8 +30,16 @@ export class ContactPage {
     { "image":"imgs/user_image2.png", "user_name":"lordofaddi", "country":"London", "followers":"62.4", "location":"PARIS" , "verified":"0"  },
     
 ]
-
   }
+
+  addEvent1(index:string){
+    this.selected = index;
+    }
+
+    addwisers(index:string){
+      this.selwisers = index;
+      }
+
 
   OnOpenMenu()
   {

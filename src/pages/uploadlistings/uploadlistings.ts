@@ -9,7 +9,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 export class UploadlistingsPage {
   myInput: any;
-
+  public condition: string = 'new';
   
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }

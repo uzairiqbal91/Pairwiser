@@ -10,7 +10,7 @@
           </div>
         </ion-col>
         <ion-col col-4>
-          <p style="float:right;color:white">CLEAR</p>
+          <p style="float:right;color:white" (click)="clear()">CLEAR</p>
         </ion-col>
       </ion-row>
     </ion-grid>
@@ -72,7 +72,7 @@
 
     <ion-item style="margin-top: 20px;" no-lines>
       <ion-label>AVAILABLE TO BUY</ion-label>
-      <ion-toggle checked="false"></ion-toggle>
+      <ion-toggle [(ngModel)]="available" checked="false"></ion-toggle>
     </ion-item>
 
 

@@ -21,6 +21,9 @@ export class HomePage {
   //for onclick bg color change
   selected = "";
   selected_size = "";
+  staggered = "";
+
+  two : any = '2';
 
   public pairs: string = 'discover';
   public categories: Array<string> = ['discover', 'sizes', 'brands']
@@ -92,8 +95,10 @@ export class HomePage {
     console.log("Price:" + price);
     console.log("At Index:" + index);
     this.selected = index;
+    //this.pairs = 'sizes';
     }
 
+ 
   
           //Coding for Shoe Sizes
           //Grid 1

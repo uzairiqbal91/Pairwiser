@@ -12,13 +12,13 @@ import { SettingsPage } from '../pages/settings/settings';
 
 import { AboutPage } from '../pages/about/about';
 import { InboxPage } from '../pages/inbox/inbox';
-import { UploadlistingsPage } from '../pages/uploadlistings/uploadlistings';
+
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = UploadlistingsPage;  //MainPage TabsPage
+  rootPage:any = MainPage;  //MainPage TabsPage
   @ViewChild('nav') nav: NavController;
 
   order = OrderHistoryPage;

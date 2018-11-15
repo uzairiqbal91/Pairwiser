@@ -1,83 +1,105 @@
 <ion-content padding style="background-color:#f8f8f8" no-bounce>
 
+  <ion-grid>
+    <ion-row>
+      <ion-col col-4 style="margin-top: -5px;">
+        <ion-icon ios="ios-close" md="md-close" style="color:#0b77d2;" (click)="close()"></ion-icon>
+      </ion-col>
+      <ion-col col-4 style="margin-top: -19px;">
+        <p style="font-size:1.2em;color:#2c3339">EDIT LISTING</p>
+      </ion-col>
+      <ion-col col-4>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <ion-scroll scrollX="true" style="width:112%; height:113px">
+    <ion-row nowrap>
+      <ion-col col-4><img src="imgs/add_picture.png" style="width: 75%;" /></ion-col>
+      <ion-col col-4>
+        <ion-card style="background-color: grey;width: 70%;height: 85px;margin-top: 2px;margin-left: -14px;"></ion-card>
+      </ion-col> <!-- margin-top: -91px;margin-left: 103px;" -->
+      <ion-col col-4>
+        <ion-card style="background-color: grey;width: 70%;height: 85px;margin-top: 2px;margin-left: -33px;"></ion-card>
+      </ion-col>
+      <ion-col col-4>
+        <ion-card style="background-color: grey;width: 70%;height: 85px;margin-top: 2px;margin-left: -50px;"></ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-scroll>
+
+
+  <ion-card style="border-radius:12px 12px;background-color:white">
+
+    <ion-item>
+      <ion-input type="text" placeholder="Title(optional)" style="color:grey"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed style="color:black">&nbsp;&nbsp;USD</ion-label>
+      <ion-input type="text" value=""></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed style="color:black">&nbsp;&nbsp;Shipping cost</ion-label>
+      <ion-input type="text" value=""></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="text" placeholder="Description(optional)" style="color:grey"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>&nbsp;&nbsp;SIZE</ion-label>
+      <ion-select [(ngModel)]="size">
+        <ion-option value="nes">4</ion-option>
+        <ion-option value="n64">4.5</ion-option>
+        <ion-option value="ps">5</ion-option>
+        <ion-option value="genesis">5.5</ion-option>
+        <ion-option value="saturn">6</ion-option>
+        <ion-option value="snes">6.5</ion-option>
+      </ion-select>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label>&nbsp;&nbsp;BRAND</ion-label>
+      <ion-select [(ngModel)]="brand">
+        <ion-option value="nes">Nike</ion-option>
+        <ion-option value="n64">Addidas</ion-option>
+        <ion-option value="ps">Custom</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Share on Facebook</ion-label>
+      <ion-toggle checked="false"></ion-toggle>
+    </ion-item>
+
     <ion-grid>
-        <ion-row>
-          <ion-col col-4 style="margin-top: -5px;">
-            <ion-icon ios="ios-close" md="md-close" style="color:#0b77d2;" (click)="close()"></ion-icon>
-          </ion-col>
-          <ion-col col-4 style="margin-top: -19px;"><p style="font-size:1.2em;color:#2c3339">EDIT LISTING</p></ion-col>
-          <ion-col col-4>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
+      <ion-row>
+        <ion-col col-4>
+         <ion-label style="font-size: 1.2em;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Condition</ion-label>
+        </ion-col>
 
+        <ion-col col-8>
+          <ion-segment [(ngModel)]="condition" style="width: 70%;float: right;" >
+            <ion-segment-button value="new">
+              New
+            </ion-segment-button>
+            <ion-segment-button value="used">
+              Used
+            </ion-segment-button>
+          </ion-segment>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+   
+  </ion-card>
 
-      <ion-scroll scrollX="true" style="width:112%; height:113px" >
-        <ion-row nowrap>
-          <ion-col col-4><img src="imgs/add_picture.png" style="width: 75%;"/></ion-col>
-          <ion-col col-4><ion-card style="background-color: grey;width: 70%;height: 85px;margin-top: 2px;margin-left: -14px;"></ion-card></ion-col> <!-- margin-top: -91px;margin-left: 103px;" -->
-          <ion-col col-4><ion-card style="background-color: grey;width: 70%;height: 85px;margin-top: 2px;margin-left: -33px;"></ion-card></ion-col>
-          <ion-col col-4><ion-card style="background-color: grey;width: 70%;height: 85px;margin-top: 2px;margin-left: -50px;"></ion-card></ion-col>
-        </ion-row>
-      </ion-scroll>
-
-
-      <ion-card style="border-radius:12px 12px;background-color:white">
-
-            <ion-item>
-                <ion-input type="text" placeholder="Title(optional)" style="color:grey"></ion-input>
-              </ion-item>
-
-              <ion-item>
-                  <ion-label fixed style="color:black">&nbsp;&nbsp;USD</ion-label>
-                  <ion-input type="text" value=""></ion-input>
-                </ion-item>
-
-                <ion-item>
-                    <ion-label fixed style="color:black">&nbsp;&nbsp;Shipping cost</ion-label>
-                    <ion-input type="text" value=""></ion-input>
-                  </ion-item>
-
-                  <ion-item>
-                      <ion-input type="text" placeholder="Description(optional)" style="color:grey"></ion-input>
-                    </ion-item>
-
-                    <ion-item>
-                        <ion-label>&nbsp;&nbsp;SIZE</ion-label>
-                        <ion-select [(ngModel)]="size">
-                          <ion-option value="nes">4</ion-option>
-                          <ion-option value="n64">4.5</ion-option>
-                          <ion-option value="ps">5</ion-option>
-                          <ion-option value="genesis">5.5</ion-option>
-                          <ion-option value="saturn">6</ion-option>
-                          <ion-option value="snes">6.5</ion-option>
-                        </ion-select>
-                      </ion-item>
-      
-
-                      <ion-item>
-                          <ion-label>&nbsp;&nbsp;BRAND</ion-label>
-                          <ion-select [(ngModel)]="brand">
-                            <ion-option value="nes">Nike</ion-option>
-                            <ion-option value="n64">Addidas</ion-option>
-                            <ion-option value="ps">Custom</ion-option>
-                          </ion-select>
-                        </ion-item>
-
-                        <ion-item>
-                            <ion-label>Share on Facebook</ion-label>
-                            <ion-toggle checked="false"></ion-toggle>
-                          </ion-item>
-
-                          <ion-segment [(ngModel)]="first" style="width: 70%;">
-                              <ion-segment-button style="text-transform: none" value="lowest">
-                                Lowest First
-                              </ion-segment-button>
-                              <ion-segment-button style="text-transform: none" value="highest">
-                                Highest First
-                              </ion-segment-button>
-                            </ion-segment>
-          
-      </ion-card>
-
+  <div align="center">
+    <button ion-button round full style="width:80%;background-color:#f9c04c;color:white">SAVE CHANGES</button>
+  </div>
+  
 </ion-content>

@@ -16,6 +16,36 @@
 // automatically applied to the <body> element in the app.
 
 
+ion-icon {
+   &[class*="appname-"] {
+       // Instead of using the font-based icons
+       // We're applying SVG masks
+       mask-size: contain;
+       mask-position: 50% 50%;
+       mask-repeat: no-repeat;
+       background: currentColor;
+       width: 1em;
+       height: 1em;
+   }
+   // custom icons
+   &[class*="appname-customicon1"] {
+       mask-image: url(../assets/imgs/Icon1.svg);
+   }
+   &[class*="appname-customicon2"] {
+       mask-image: url(../assets/imgs/Icon2.svg);
+   }
+   &[class*="appname-customicon3"] {
+      mask-image: url(../assets/imgs/Icon3.svg);
+  }
+  &[class*="appname-customicon4"] {
+   mask-image: url(../assets/imgs/Icon4.svg);  
+}
+&[class*="appname-settings_prof"] {
+   mask-image: url(../assets/imgs/settings_prof.svg);
+}
+}
+
+
 @supports (column-count: 5) {
     .wrapper {
        -moz-column-count: 5;

@@ -34,13 +34,15 @@
 
     <ion-list *ngSwitchCase="'pair'">
 
-      <ion-grid style="margin-left: -10px;">
+      <ion-grid style="margin-left: -17px;width: 104%;margin-top: -16px;">
         <ion-row>
-          <ion-col col-6 *ngFor="let product of products">
+          <ion-col col-6 *ngFor="let product of products, let i = index">
             <!--align-self-start-->
-            <div>
+           
               <ion-card [ngStyle]="{'border-top-color':buttonColor, 'border-bottom-color':buttonColor, 'border-right-color':buttonColor, 'border-left-color':buttonColor}"
                 style="border-radius:12px 12px;width:100%; border-top: 2px solid; border-bottom: 2px solid; border-left: 2px solid; border-right: 2px solid;">
+
+               
 
                 <div align="center" style="padding-top:5px;padding-bottom:5px">
                   <img src="{{product.image}}" style="width:72%" />
@@ -59,7 +61,7 @@
                 </div>
 
               </ion-card>
-            </div>
+           
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -70,13 +72,15 @@
 
     <ion-list *ngSwitchCase="'wisers'">
 
-      <ion-grid style="margin-left:-10px;margin-top: -8px;">
+      <ion-grid style="margin-left: -17px;width: 104%;margin-top: -16px;">
         <ion-row>
-          <ion-col col-6 *ngFor="let post of wisers">
+          <ion-col col-6 *ngFor="let post of wisers,let i = index">
             <!--align-self-start-->
-            <div>
-              <ion-card [ngStyle]="{'border-top-color':buttonColor, 'border-bottom-color':buttonColor, 'border-right-color':buttonColor, 'border-left-color':buttonColor}"
-                style="border-radius:12px 12px;width:100%; border-top: 2px solid; border-bottom: 2px solid; border-left: 2px solid; border-right: 2px solid;background-color:#f0f0f0">
+<!--          
+            <ion-card [class.highlight-wisers]=" i === selwisers" class="change-color-wisers" (click)="addwisers(i);"> -->
+
+                <ion-card [ngStyle]="{'border-top-color':buttonColor, 'border-bottom-color':buttonColor, 'border-right-color':buttonColor, 'border-left-color':buttonColor}"
+                style="border-radius:12px 12px;width:100%; border-top: 2px solid; border-bottom: 2px solid; border-left: 2px solid; border-right: 2px solid;">
 
                 <div align="center" style="padding-top:30px;padding-bottom:5px">
                   <img src="{{post.image}}" style="width:51%" />
@@ -106,7 +110,7 @@
 
 
               </ion-card>
-            </div>
+           
           </ion-col>
         </ion-row>
       </ion-grid>

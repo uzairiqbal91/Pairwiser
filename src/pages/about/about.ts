@@ -35,13 +35,13 @@ export class AboutPage {
 
   addEvent1(){
     console.log("event 1 called");
-    this.buttonColor = '#f9c04c';
+    this.buttonColor = '#ff7600';
     this.buttonColor1 = 'lightgrey';
     }
 
     addEvent2(){
       console.log("event 2 called");
-      this.buttonColor1 = '#f9c04c';
+      this.buttonColor1 = '#ff7600';
       this.buttonColor = 'lightgrey';
       }
 
