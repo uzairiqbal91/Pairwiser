@@ -12,10 +12,10 @@
   </ion-navbar>
   <div style="background-color: #2a3040">
     <ion-segment [(ngModel)]="order">
-      <ion-segment-button value="active">
+      <ion-segment-button style="text-transform: none;font-size: 1.3em;" value="active">
         Active
       </ion-segment-button>
-      <ion-segment-button value="history">
+      <ion-segment-button style="text-transform: none;font-size: 1.3em;" value="history">
         History
       </ion-segment-button>
     </ion-segment>
@@ -34,7 +34,7 @@
         <ion-grid>
           <ion-row>
             <ion-col col-09>
-              <p style="color:#a6a6a6;font-size:1.0em">Order No: <b style="color:#464646;font-size:0.9em">{{post.order_no}}</b>
+              <p style="color:#a6a6a6;font-size:1.0em">Order No: <b style="color:#575757;font-size:1.2em">{{post.order_no}}</b>
               </p>
             </ion-col>
             <ion-col col-03>
@@ -43,9 +43,9 @@
           </ion-row>
         </ion-grid>
 
-        <p style="color:#a6a6a6;padding-left: 11px;;font-size:1.2em">Item: <b style="color:#464646;font-size:1.2em">{{post.item}}</b></p>
-        <h2 *ngIf="post.status === '1' || post.status === 1" style="color:#00c685;padding-left: 11px;;font-size:1.5em;padding-top: 5px;">Order delivered</h2>
-        <h2 *ngIf="post.status === '0' || post.status === 0" style="color:#0a7abc;padding-left: 11px;;font-size:1.5em;padding-top: 5px;">Order on delivery</h2>
+        <p style="color:#a6a6a6;padding-left: 11px;;font-size:1.2em">Item: <b style="color:#575757;font-size:1em">{{post.item}}</b></p>
+        <h2 *ngIf="post.status === '1' || post.status === 1" style="color:#00c685;padding-left: 11px;;font-size:1.5em;padding-top: 5px;padding-bottom:15px">Order delivered</h2>
+        <h2 *ngIf="post.status === '0' || post.status === 0" style="color:#0a7abc;padding-left: 11px;;font-size:1.5em;padding-top: 5px;padding-bottom:15px">Order on delivery</h2>
       </ion-card>
 
 
@@ -58,3 +58,7 @@
   </div>
 
 </ion-content>
+
+<ion-footer>
+  <img src="imgs/tab.png"/>
+</ion-footer>

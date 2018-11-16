@@ -3,6 +3,11 @@ page-home {
         color: white;
         background-color: #98979f;
     }  
+
+    .card-md {
+        -webkit-box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+        box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    }
 }
 
 .new-header{
@@ -56,15 +61,15 @@ page-home {
     border-right: 2px solid;
     width: 117%;
     height: 78px;
-    border-top-color:lightgrey !important;
-    border-bottom-color:lightgrey !important;
-    border-right-color:lightgrey !important;
-    border-left-color:lightgrey !important;
+    border-top-color:white !important;
+    border-bottom-color:white !important;
+    border-right-color:white !important;
+    border-left-color:white !important;
    // width: calc(100% - 16px);
     font-size: 1.4rem;
     background: #fff;
-    -webkit-box-shadow: 2px 2px 2px 2px lightgrey lightgrey lightgrey lightgrey;
-    box-shadow: 2px 2px 2px 2px lightgrey lightgrey lightgrey lightgrey;
+    -webkit-box-shadow: 0px 0px 0px 0px lightgrey lightgrey lightgrey lightgrey;
+    box-shadow: 0px 0px 0px 0px lightgrey lightgrey lightgrey lightgrey;
   }
 
   .highlight_box_size{
@@ -81,8 +86,8 @@ page-home {
    // width: calc(100% - 16px);
     font-size: 1.4rem;
     background: #fff;
-    -webkit-box-shadow: 2px 2px 2px 2px lightgrey lightgrey lightgrey lightgrey;
-    box-shadow: 2px 2px 2px 2px lightgrey lightgrey lightgrey lightgrey;
+    -webkit-box-shadow: 0px 0px 0px 0px lightgrey lightgrey lightgrey lightgrey;
+    box-shadow: 0px 0px 0px 0px lightgrey lightgrey lightgrey lightgrey;
   }
   
   

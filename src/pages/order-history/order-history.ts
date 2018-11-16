@@ -15,10 +15,10 @@ export class OrderHistoryPage {
 
     this.order_history = [
    
-      { "order_no":"7182783", "date":"22/11/2015", "item":"Air force one red" , "status":"1"},
-      { "order_no":"7182784", "date":"02/12/2015", "item":"Addison Yezzy 2015", "status":"0"},
-      { "order_no":"7182785", "date":"18/12/2015", "item":"Air max 360 bubble" , "status":"1"},
-      { "order_no":"7182786", "date":"30/01/2016", "item":"Nike Climax 3rd" , "status":"0"},
+      { "order_no":"71827836", "date":"22.11.2015", "item":"Air force one red" , "status":"1"},
+      { "order_no":"71827846", "date":"02.12.2015", "item":"Addison Yezzy 2015", "status":"0"},
+      { "order_no":"71827856", "date":"18.12.2015", "item":"Air max 360 bubble" , "status":"1"},
+      { "order_no":"71827866", "date":"30.01.2016", "item":"Nike Climax 3rd" , "status":"0"},
   ]
 
   }

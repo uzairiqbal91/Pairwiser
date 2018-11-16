@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, MenuController, AlertController } from 'ionic-angular';
 import { SettingsPage } from '../settings/settings';
+import { NativeStorage } from '@ionic-native/native-storage';
 
 @Component({
   selector: 'page-about',
@@ -11,7 +12,9 @@ export class AboutPage {
   buttonColor1: string = 'lightgrey'
   alert_color: string = 'blue'
   public buttonClicked: boolean = false; 
-
+  username : any;
+  email : any;
+  products: { "image": string; "product_name": string; "price": string; }[];
   public onButtonClick() {
 
     this.buttonClicked = !this.buttonClicked;
@@ -21,9 +24,40 @@ export class AboutPage {
   public profile: string = 'stack';
   public categories: Array<string> = ['stack', 'pairs', 'reviews']
 
-  constructor(public alertCtrl: AlertController, private menuCtrl: MenuController, public navCtrl: NavController) {
+  constructor(private nativeStorage: NativeStorage, public alertCtrl: AlertController, private menuCtrl: MenuController, public navCtrl: NavController) {
+
+    
+    this.products = [
+
+      { "image": "imgs/shoes.png", "product_name": "Red wing moc toe", "price": "190" },
+      { "image": "imgs/shoes.png", "product_name": "Red wing moc toe", "price": "190" },
+      { "image": "imgs/shoes2.png", "product_name": "Red wing moc toe", "price": "190" },
+      { "image": "imgs/shoes2.png", "product_name": "Red wing moc toe", "price": "190" },
+      { "image": "imgs/shoes.png", "product_name": "Red wing moc toe", "price": "190" },
+      { "image": "imgs/shoes2.png", "product_name": "Red wing moc toe", "price": "190" },
+      { "image": "imgs/shoes.png", "product_name": "Red wing moc toe", "price": "190" },
+
+    ]
+    //   this.nativeStorage.getItem('username')
+    // .then(
+    //   data => {
+    //     console.log("Checking for username:" + data);
+    //     this.username = data;
+    //   },
+    //   error => console.error(error)
+    // );
+
+    //   this.nativeStorage.getItem('email')
+    // .then(
+    //   data => {
+    //     console.log("Checking for email:" + data);
+    //     this.email = data;
+    //   },
+    //   error => console.error(error)
+    // );
 
   }
+
   OnOpenMenu()
   {
     this.menuCtrl.open();

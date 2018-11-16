@@ -6,32 +6,39 @@
                     <ion-icon name="ios-menu-outline" style="color:white;" (click)="OnOpenMenu()"></ion-icon>
                 </ion-col>
                 <ion-col col-4><img src="imgs/logo.png" /></ion-col>
-                <ion-col col-4><ion-icon name="ios-settings-outline" style="color:white;float:right" (click)="settings()"></ion-icon></ion-col>
+                <ion-col col-4>
+                    <ion-icon name="ios-settings-outline" style="color:white;float:right" (click)="settings()"></ion-icon>
+                </ion-col>
             </ion-row>
         </ion-grid>
 
         <ion-grid>
             <ion-row>
                 <ion-col col-6 style="padding-left:21px">
-                    <img src="imgs/user_image.png" style="width:61%" />
+                    <img src="imgs/user_image.png" style="width:61%" />  <!-- {{user_image}} -->
                 </ion-col>
 
                 <ion-col col-6 style="margin-left: -40px;">
 
                     <div align="right">
                         <img src="imgs/location.png" style="width:13%;margin-right: 33px;margin-bottom: 1px;" />
-                        <p style="color:white;margin-top: -25px;padding-right: 17px;font-size: 0.75em;">UK</p>
+                        <p style="color:white;margin-top: -25px;padding-right: 17px;font-size: 0.75em;">UK</p>  <!-- {{location}} -->
                     </div>
 
                     <div>
-                        <div align="right"><img src="imgs/tick.png" style="width: 15%;" /></div>
-                        <ion-card style="background-color:#ff7200;margin-top: -31px;margin-left: -4px;">
-                            <p style="color:white;font-size: 1.5em;">&nbsp;//&nbsp;mrbullardi</p> <!-- //Username  -->
-                        </ion-card>
+                        <!--div *ngIf="verified === '1' || verified === 1" align="right"><img src="imgs/tick.png" style="width: 15%;" /></div-->
+                        <div align="right">
+                            <img src="imgs/profile_box.png" style="width:81%"/>
+                            <img src="imgs/tick.png" style="width: 15%;" /></div>
+                        <!-- <ion-card style="background-color:#ff7200;margin-top: -31px;margin-left: -4px;">
+                            <p style="color:white;font-size: 1.5em;">&nbsp;//&nbsp;mrbullardi</p> <!-- //{{username}}  
+                        </ion-card> -->
+                        
                     </div>
 
-                    <div align="center" style="margin-top: -18px;">
-                        <p style="color:white;font-size: 1.75em;margin-left: -34px;">0000<b style="color:#ff7200">3125</b>
+                    <div align="center" style="margin-top: 6px; margin-left: -25px;">
+                        <!--p style="color:white;font-size: 1.75em;margin-left: -34px;">0000<b style="color:#ff7200">3125</b>  <!-- {{followers}} -->
+                        <img src="imgs/digit.png" style="width: 60%;"/>
                     </div>
 
                 </ion-col>
@@ -39,15 +46,15 @@
         </ion-grid>
     </ion-navbar>
 
-    <div style="background-color: #2a3040;margin-top: -15px;">
+    <div style="background-color: #2a3040;margin-top: -4px;">
         <ion-segment [(ngModel)]="profile">
-            <ion-segment-button style="text-transform: none" value="stack">
+            <ion-segment-button style="text-transform: none;font-size: 1.1em;" value="stack">
                 Stack
             </ion-segment-button>
-            <ion-segment-button style="text-transform: none" value="pairs">
+            <ion-segment-button style="text-transform: none;font-size: 1.1em;" value="pairs">
                 Pairs
             </ion-segment-button>
-            <ion-segment-button style="text-transform: none" value="reviews">
+            <ion-segment-button style="text-transform: none;font-size: 1.1em;" value="reviews">
                 Reviews
             </ion-segment-button>
         </ion-segment>
@@ -57,46 +64,35 @@
 
 <ion-content>
 
-    <div [ngSwitch]="profile" swipeSegment [tabsList]="categories" [(currentTab)]="category" (tabChanged)="onTabChanged($event)"
-        class="swipe-area" style="margin-top:5px">
-
+    <div [ngSwitch]="profile" swipeSegment [tabsList]="categories" [(currentTab)]="category" (tabChanged)="onTabChanged($event)" class="swipe-area" style="margin-top:5px">
         <ion-list *ngSwitchCase="'stack'">
+            <!-- <ion-grid style="margin-left: -15px;width: 105%;">
 
-            <ion-grid style="margin-left: -15px;width: 105%;    ">
                 <ion-row>
-                    <ion-col>
 
+                    <ion-col>
                         <div>
                             <ion-card (click)="addEvent1();" [ngStyle]="{'border-top-color':buttonColor, 'border-bottom-color':buttonColor, 'border-right-color':buttonColor, 'border-left-color':buttonColor}"
                                 style="border-radius:12px 12px;height: 230px;;width:95%; border-top: 2px solid; border-bottom: 2px solid; border-left: 2px solid; border-right: 2px solid;">
-
                                 <div align="center" style="padding-top:5px;padding-bottom:5px">
                                     <img src="imgs/shoes.png" style="width:72%" />
                                 </div>
-
                                 <div style="margin-top: 50px;">
-
                                     <h4 style="color:grey;padding-left:5px;font-size: 1.0em;">Red wing moc toe</h4>
                                     <b style="color:black;padding-left:7px;padding-bottom:10px;font-size: 1.0em;">$190</b>
-
                                     <div align="right" style="margin-top: -22px;padding-right: 6px;">
                                         <ion-icon ios="ios-refresh-circle" md="md-refresh-circle" style="color:#ff7200;font-size: 1.65em;"
                                             (click)="refresh_alert()"></ion-icon>
                                     </div>
-
                                 </div>
-
                             </ion-card>
                         </div>
-                        
                     </ion-col>
 
                     <ion-col>
-
                         <div>
                             <ion-card (click)="addEvent2();" [ngStyle]="{'border-top-color':buttonColor1, 'border-bottom-color':buttonColor1, 'border-right-color':buttonColor1, 'border-left-color':buttonColor1}"
                                 style="border-radius:12px 12px;height: 230px;;width:95%; border-top: 2px solid; border-bottom: 2px solid; border-left: 2px solid; border-right: 2px solid;">
-
                                 <div align="center" style="padding-top:5px;padding-bottom:5px">
                                     <img src="imgs/shoe1.png" style="width:72%" />
                                 </div>
@@ -110,15 +106,46 @@
                             </ion-card>
                         </div>
                     </ion-col>
+
                 </ion-row>
-            </ion-grid>
+            </ion-grid> -->
+
+            <ion-grid style="margin-left: -6px; margin-top:15px" no-padding>
+                    <!--style="margin-top: 10px;" -->
+                    <ion-row>
+            
+                      <ion-col col-6 *ngFor="let post of products,let i = index">
+            
+                        <ion-card [class.highlight]=" i === selected" class="change-color" (click)="addEvent1(i, post.image, post.product_name, post.price);">
+                          <!--style="margin-top:-5px"-->
+            
+                          <div align="center" style="padding-top:5px;padding-bottom:5px">
+                            <img src="{{post.image}}" style="width:72%" />
+                          </div>
+            
+                          <div align="center" style="margin-top: 50px">
+                            <img src="imgs/line.png" />
+                          </div>
+            
+                          <div style="margin-top: 10px;padding-bottom:15px">
+                            <h4 style="color:grey;padding-left:5px;font-size: 1.0em;">{{post.product_name}}</h4>
+                            <b style="color:black;padding-left:7px;padding-bottom:10px;font-size: 1.0em;">${{post.price}}</b>
+                            <div align="right" style="margin-top: -22px;padding-right: 6px;">
+                              <ion-icon ios="ios-refresh-circle" md="md-refresh-circle" style="color:#ff7200;font-size: 1.65em;"
+                                (click)="refresh_alert()"></ion-icon>
+                            </div>
+                          </div>
+                        </ion-card>
+                      </ion-col>
+                    </ion-row>
+                  </ion-grid>
         </ion-list>
 
 
 
         <ion-list *ngSwitchCase="'pairs'">
 
-            <ion-grid style="margin-left: -15px;width: 105%;   ">
+            <ion-grid style="margin-left: -15px;width: 105%;">
                 <ion-row>
                     <ion-col>
 
@@ -139,13 +166,12 @@
                                     </div>
 
                                 </div>
-
                             </ion-card>
                         </div>
+
                     </ion-col>
 
                     <ion-col>
-
                         <div>
                             <ion-card (click)="addEvent2();" [ngStyle]="{'border-top-color':buttonColor1, 'border-bottom-color':buttonColor1, 'border-right-color':buttonColor1, 'border-left-color':buttonColor1}"
                                 style="border-radius:12px 12px;height: 230px;;width:95%; border-top: 2px solid; border-bottom: 2px solid; border-left: 2px solid; border-right: 2px solid;">
@@ -171,7 +197,6 @@
         <ion-list *ngSwitchCase="'reviews'">
 
             <ion-list>
-
                 <ion-item>
                     <ion-avatar item-start>
                         <img src="imgs/user_image.png">
@@ -188,8 +213,7 @@
                     <ion-grid>
                         <ion-row>
                             <ion-col col-10>
-                                <ion-input class="chat_screen" type="text" placeholder=" Type your message here...."
-                                   ></ion-input>
+                                <ion-input class="chat_screen" type="text" placeholder=" Type your message here...."></ion-input>
                             </ion-col>
                             <ion-col col-2 style="margin-top: -13px;">
                                 <ion-icon name="ios-send-outline" style="font-size: 3.0em;"></ion-icon>
@@ -233,23 +257,7 @@
                         labore et dolore magna aliqua</p>
                     <p style="color:blue;font-size:0.65em">Reply</p>
                 </ion-item>
-
             </ion-list>
-
-            <!-- <div *ngIf="buttonClicked" style="background-color:#f4f4f4;height: 60px;">
-                    <ion-grid>
-                        <ion-row>
-                            <ion-col col-10>
-                               
-                                    <ion-input class="chat_screen" type="text" placeholder=" Type your message here...." style="color:white"></ion-input>
-                                
-                            </ion-col>
-                            <ion-col col-2>
-                                    <ion-icon name="ios-send-outline" style="font-size: 3.0em;"></ion-icon>
-                            </ion-col>
-                        </ion-row>
-                    </ion-grid>
-            </div> -->
 
         </ion-list>
 
