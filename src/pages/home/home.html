@@ -3,7 +3,7 @@
     <ion-grid>
       <ion-row>
         <ion-col col-4>
-          <ion-icon name="ios-menu-outline" style="color:white;" (click)="OnOpenMenu()"></ion-icon>
+          <ion-icon name="appname-menu" style="color:white;font-size: 1.8em;" (click)="OnOpenMenu()"><b></b></ion-icon>
         </ion-col>
         <ion-col col-4><img src="imgs/logo.png" style="width:100%" /></ion-col>
         <ion-col col-4>
@@ -14,13 +14,13 @@
   </ion-navbar>
   <div style="background-color: #2a3040">
     <ion-segment [(ngModel)]="pairs" style="text-transform: none">
-      <ion-segment-button style="text-transform: none;font-size: 1.1em;" value="discover">
+      <ion-segment-button style="text-transform: none;font-size: 1em;" value="discover">
         Discover
       </ion-segment-button>
-      <ion-segment-button style="text-transform: none;font-size: 1.1em;" value="sizes">
+      <ion-segment-button style="text-transform: none;font-size: 1em;" value="sizes">
         Sizes
       </ion-segment-button>
-      <ion-segment-button style="text-transform: none;font-size: 1.1em;" value="brands">
+      <ion-segment-button style="text-transform: none;font-size: 1em;" value="brands">
         Brands
       </ion-segment-button>
     </ion-segment>
@@ -44,10 +44,10 @@
               <!--style="margin-top:-5px"-->
 
               <div align="center" style="padding-top:5px;padding-bottom:5px">
-                <img src="{{post.image}}" style="width:72%" />
+                <img src="{{post.image}}" style="width:90%" />
               </div>
 
-              <div align="center" style="margin-top: 50px">
+              <div align="center" style="margin-top: 19px">
                 <img src="imgs/line.png" />
               </div>
 

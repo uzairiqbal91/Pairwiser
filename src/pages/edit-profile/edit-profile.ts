@@ -13,7 +13,7 @@ import { NativeStorage } from '@ionic-native/native-storage';
   templateUrl: 'edit-profile.html',
 })
 export class EditProfilePage {
-  url: string;
+  url: any;
   imageURI: any;
 
   constructor(public toastCtrl: ToastController, public actionSheetCtrl: ActionSheetController, public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController, private loadingCtrl: LoadingController, private http: Http, private transfer: FileTransfer, private camera: Camera, private nativeStorage: NativeStorage)   //private transfer: FileTransfer, private camera: Camera, private nativeStorage: NativeStorage,

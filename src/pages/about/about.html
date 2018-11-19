@@ -3,11 +3,11 @@
         <ion-grid>
             <ion-row>
                 <ion-col col-4>
-                    <ion-icon name="ios-menu-outline" style="color:white;" (click)="OnOpenMenu()"></ion-icon>
+                    <ion-icon name="appname-menu" style="color:white;font-size: 1.8em;" (click)="OnOpenMenu()"></ion-icon>
                 </ion-col>
-                <ion-col col-4><img src="imgs/logo.png" /></ion-col>
+                <ion-col col-4><div align="center"><img src="imgs/logo.png" style="width:80%"/></div></ion-col>
                 <ion-col col-4>
-                    <ion-icon name="ios-settings-outline" style="color:white;float:right" (click)="settings()"></ion-icon>
+                    <ion-icon name="appname-settings_prof" style="color:white;float:right;font-size: 2.5em;margin-top: -4px;" (click)="settings()"></ion-icon>
                 </ion-col>
             </ion-row>
         </ion-grid>
@@ -15,30 +15,27 @@
         <ion-grid>
             <ion-row>
                 <ion-col col-6 style="padding-left:21px">
-                    <img src="imgs/user_image.png" style="width:61%" />  <!-- {{user_image}} -->
+                    <img src="imgs/user_profile_1.png" style="width:61%" /> <!-- {{user_image}} -->
                 </ion-col>
 
                 <ion-col col-6 style="margin-left: -40px;">
 
                     <div align="right">
-                        <img src="imgs/location.png" style="width:13%;margin-right: 33px;margin-bottom: 1px;" />
-                        <p style="color:white;margin-top: -25px;padding-right: 17px;font-size: 0.75em;">UK</p>  <!-- {{location}} -->
+                        <img src="imgs/location.png" style="width:11%;margin-right: 49px;margin-bottom: 5px;" />
+                        <p style="color:white;margin-top: -25px;padding-right: 34px;font-size: 0.75em;">UK</p>
+                        <!-- {{location}} -->
                     </div>
 
                     <div>
                         <!--div *ngIf="verified === '1' || verified === 1" align="right"><img src="imgs/tick.png" style="width: 15%;" /></div-->
                         <div align="right">
-                            <img src="imgs/profile_box.png" style="width:81%"/>
+                            <img src="imgs/profile_box.png" style="width:81%" />
                             <img src="imgs/tick.png" style="width: 15%;" /></div>
-                        <!-- <ion-card style="background-color:#ff7200;margin-top: -31px;margin-left: -4px;">
-                            <p style="color:white;font-size: 1.5em;">&nbsp;//&nbsp;mrbullardi</p> <!-- //{{username}}  
-                        </ion-card> -->
-                        
                     </div>
 
                     <div align="center" style="margin-top: 6px; margin-left: -25px;">
                         <!--p style="color:white;font-size: 1.75em;margin-left: -34px;">0000<b style="color:#ff7200">3125</b>  <!-- {{followers}} -->
-                        <img src="imgs/digit.png" style="width: 60%;"/>
+                        <img src="imgs/digit.png" style="width: 60%;" />
                     </div>
 
                 </ion-col>
@@ -48,13 +45,13 @@
 
     <div style="background-color: #2a3040;margin-top: -4px;">
         <ion-segment [(ngModel)]="profile">
-            <ion-segment-button style="text-transform: none;font-size: 1.1em;" value="stack">
+            <ion-segment-button style="text-transform: none;font-size: 1em;" value="stack">
                 Stack
             </ion-segment-button>
-            <ion-segment-button style="text-transform: none;font-size: 1.1em;" value="pairs">
+            <ion-segment-button style="text-transform: none;font-size: 1em;" value="pairs">
                 Pairs
             </ion-segment-button>
-            <ion-segment-button style="text-transform: none;font-size: 1.1em;" value="reviews">
+            <ion-segment-button style="text-transform: none;font-size: 1em;" value="reviews">
                 Reviews
             </ion-segment-button>
         </ion-segment>
@@ -62,132 +59,72 @@
 
 </ion-header>
 
-<ion-content>
-
-    <div [ngSwitch]="profile" swipeSegment [tabsList]="categories" [(currentTab)]="category" (tabChanged)="onTabChanged($event)" class="swipe-area" style="margin-top:5px">
+<ion-content [fullscreen]="true">
+    <div [ngSwitch]="profile" swipeSegment [tabsList]="categories" [(currentTab)]="category" (tabChanged)="onTabChanged($event)"
+        class="swipe-area" style="margin-top:5px">
         <ion-list *ngSwitchCase="'stack'">
-            <!-- <ion-grid style="margin-left: -15px;width: 105%;">
-
-                <ion-row>
-
-                    <ion-col>
-                        <div>
-                            <ion-card (click)="addEvent1();" [ngStyle]="{'border-top-color':buttonColor, 'border-bottom-color':buttonColor, 'border-right-color':buttonColor, 'border-left-color':buttonColor}"
-                                style="border-radius:12px 12px;height: 230px;;width:95%; border-top: 2px solid; border-bottom: 2px solid; border-left: 2px solid; border-right: 2px solid;">
-                                <div align="center" style="padding-top:5px;padding-bottom:5px">
-                                    <img src="imgs/shoes.png" style="width:72%" />
-                                </div>
-                                <div style="margin-top: 50px;">
-                                    <h4 style="color:grey;padding-left:5px;font-size: 1.0em;">Red wing moc toe</h4>
-                                    <b style="color:black;padding-left:7px;padding-bottom:10px;font-size: 1.0em;">$190</b>
-                                    <div align="right" style="margin-top: -22px;padding-right: 6px;">
-                                        <ion-icon ios="ios-refresh-circle" md="md-refresh-circle" style="color:#ff7200;font-size: 1.65em;"
-                                            (click)="refresh_alert()"></ion-icon>
-                                    </div>
-                                </div>
-                            </ion-card>
-                        </div>
-                    </ion-col>
-
-                    <ion-col>
-                        <div>
-                            <ion-card (click)="addEvent2();" [ngStyle]="{'border-top-color':buttonColor1, 'border-bottom-color':buttonColor1, 'border-right-color':buttonColor1, 'border-left-color':buttonColor1}"
-                                style="border-radius:12px 12px;height: 230px;;width:95%; border-top: 2px solid; border-bottom: 2px solid; border-left: 2px solid; border-right: 2px solid;">
-                                <div align="center" style="padding-top:5px;padding-bottom:5px">
-                                    <img src="imgs/shoe1.png" style="width:72%" />
-                                </div>
-                                <div style="margin-top: 50px;">
-                                    <h4 style="color:grey;padding-left:5px;font-size: 1.0em;">Red wing moc toe</h4>
-                                    <b style="color:black;padding-left:7px;padding-bottom:10px;font-size: 1.0em;">$190</b>
-                                    <div align="right" style="margin-top: -22px;padding-right: 6px;">
-                                        <ion-icon ios="ios-refresh-circle" md="md-refresh-circle" style="color:#ff7200;font-size: 1.65em;"></ion-icon>
-                                    </div>
-                                </div>
-                            </ion-card>
-                        </div>
-                    </ion-col>
-
-                </ion-row>
-            </ion-grid> -->
 
             <ion-grid style="margin-left: -6px; margin-top:15px" no-padding>
-                    <!--style="margin-top: 10px;" -->
-                    <ion-row>
-            
-                      <ion-col col-6 *ngFor="let post of products,let i = index">
-            
+                <!--style="margin-top: 10px;" -->
+                <ion-row>
+
+                    <ion-col col-6 *ngFor="let post of products,let i = index">
+
                         <ion-card [class.highlight]=" i === selected" class="change-color" (click)="addEvent1(i, post.image, post.product_name, post.price);">
-                          <!--style="margin-top:-5px"-->
-            
-                          <div align="center" style="padding-top:5px;padding-bottom:5px">
-                            <img src="{{post.image}}" style="width:72%" />
-                          </div>
-            
-                          <div align="center" style="margin-top: 50px">
-                            <img src="imgs/line.png" />
-                          </div>
-            
-                          <div style="margin-top: 10px;padding-bottom:15px">
-                            <h4 style="color:grey;padding-left:5px;font-size: 1.0em;">{{post.product_name}}</h4>
-                            <b style="color:black;padding-left:7px;padding-bottom:10px;font-size: 1.0em;">${{post.price}}</b>
-                            <div align="right" style="margin-top: -22px;padding-right: 6px;">
-                              <ion-icon ios="ios-refresh-circle" md="md-refresh-circle" style="color:#ff7200;font-size: 1.65em;"
-                                (click)="refresh_alert()"></ion-icon>
+                            <!--style="margin-top:-5px"-->
+
+                            <div align="center" style="padding-top:5px;padding-bottom:5px">
+                                <img src="{{post.image}}" style="width:90%" />
                             </div>
-                          </div>
+
+                            <div align="center" style="margin-top: 19px">
+                                <img src="imgs/line.png" />
+                            </div>
+
+                            <div style="margin-top: 10px;padding-bottom:15px">
+                                <h4 style="color:grey;padding-left:5px;font-size: 1.0em;">{{post.product_name}}</h4>
+                                <b style="color:black;padding-left:7px;padding-bottom:10px;font-size: 1.0em;">${{post.price}}</b>
+                                <div align="right" style="margin-top: -22px;padding-right: 6px;">
+                                    <ion-icon ios="ios-refresh-circle" md="md-refresh-circle" style="color:#ff7200;font-size: 1.65em;"
+                                        (click)="refresh_alert()"></ion-icon>
+                                </div>
+                            </div>
                         </ion-card>
-                      </ion-col>
-                    </ion-row>
-                  </ion-grid>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
         </ion-list>
 
 
 
         <ion-list *ngSwitchCase="'pairs'">
 
-            <ion-grid style="margin-left: -15px;width: 105%;">
+            <ion-grid style="margin-left: -6px; margin-top:15px" no-padding>
+                <!--style="margin-top: 10px;" -->
                 <ion-row>
-                    <ion-col>
 
-                        <div>
-                            <ion-card (click)="addEvent1();" [ngStyle]="{'border-top-color':buttonColor, 'border-bottom-color':buttonColor, 'border-right-color':buttonColor, 'border-left-color':buttonColor}"
-                                style="border-radius:12px 12px;height: 230px;;width:95%; border-top: 2px solid; border-bottom: 2px solid; border-left: 2px solid; border-right: 2px solid;">
+                    <ion-col col-6 *ngFor="let cost of pairs,let i = index">
 
-                                <div align="center" style="padding-top:5px;padding-bottom:5px">
-                                    <img src="imgs/shoes.png" style="width:72%" />
+                        <ion-card [class.highlight-pairs]=" i === selected_pairs" class="change-color-pairs" (click)="addEventPairs(i, cost.image, cost.product_name, cost.price);">
+                            <!--style="margin-top:-5px"-->
+
+                            <div align="center" style="padding-top:5px;padding-bottom:5px">
+                                <img src="{{cost.image}}" style="width:90%" />
+                            </div>
+
+                            <div align="center" style="margin-top: 19px">
+                                <img src="imgs/line.png" />
+                            </div>
+
+                            <div style="margin-top: 10px;padding-bottom:15px">
+                                <h4 style="color:grey;padding-left:5px;font-size: 1.0em;">{{cost.product_name}}</h4>
+                                <b style="color:black;padding-left:7px;padding-bottom:10px;font-size: 1.0em;">${{cost.price}}</b>
+                                <div align="right" style="margin-top: -22px;padding-right: 6px;">
+                                    <ion-icon ios="ios-pricetag" md="md-pricetag" style="color:#cd3d3c;font-size: 1.65em;"
+                                        (click)="refresh_alert()"></ion-icon>
                                 </div>
-
-                                <div style="margin-top: 50px;">
-
-                                    <h4 style="color:grey;padding-left:5px;font-size: 1.0em;">Red wing moc toe</h4>
-                                    <b style="color:black;padding-left:7px;padding-bottom:10px;font-size: 1.0em;">$190</b>
-                                    <div align="right" style="margin-top: -22px;padding-right: 6px;">
-                                        <ion-icon ios="ios-pricetag" md="md-pricetag" style="color:#cd3d3c;font-size: 1.65em;"></ion-icon>
-                                    </div>
-
-                                </div>
-                            </ion-card>
-                        </div>
-
-                    </ion-col>
-
-                    <ion-col>
-                        <div>
-                            <ion-card (click)="addEvent2();" [ngStyle]="{'border-top-color':buttonColor1, 'border-bottom-color':buttonColor1, 'border-right-color':buttonColor1, 'border-left-color':buttonColor1}"
-                                style="border-radius:12px 12px;height: 230px;;width:95%; border-top: 2px solid; border-bottom: 2px solid; border-left: 2px solid; border-right: 2px solid;">
-
-                                <div align="center" style="padding-top:5px;padding-bottom:5px">
-                                    <img src="imgs/shoe1.png" style="width:72%" />
-                                </div>
-                                <div style="margin-top: 50px;">
-                                    <h4 style="color:grey;padding-left:5px;font-size: 1.0em;">Red wing moc toe</h4>
-                                    <b style="color:black;padding-left:7px;padding-bottom:10px;font-size: 1.0em;">$190</b>
-                                    <div align="right" style="margin-top: -22px;padding-right: 6px;">
-                                        <ion-icon ios="ios-pricetag" md="md-pricetag" style="color:#cd3d3c;font-size: 1.65em;"></ion-icon>
-                                    </div>
-                                </div>
-                            </ion-card>
-                        </div>
+                            </div>
+                        </ion-card>
                     </ion-col>
                 </ion-row>
             </ion-grid>
@@ -196,20 +133,18 @@
 
         <ion-list *ngSwitchCase="'reviews'">
 
-            <ion-list>
-                <ion-item>
+            <ion-list *ngFor="let toast of user_reviews, let i = index">
+                <ion-item style="margin-top: -14px;">
                     <ion-avatar item-start>
-                        <img src="imgs/user_image.png">
+                        <img src="{{toast.image}}">
                     </ion-avatar>
-                    <h2>//butterfly</h2>
+                    <h2>//{{toast.user_name}}</h2>
                     <img src="imgs/rating.png" style="width: 20%;margin-top: 0px;margin-left: -2px;" />
-                    <p text-wrap>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                        incididunt ut
-                        labore et dolore magna aliqua</p>
-                    <p style="color:blue;font-size:0.65em" (click)="onButtonClick()">Reply</p>
+                    <p text-wrap>{{toast.review}}</p>
+                    <p style="color:rgb(210, 210, 216);font-size:0.65em" (click)="onButtonClick(i)">Reply</p>
                 </ion-item>
 
-                <div *ngIf="buttonClicked" style="background-color:#f4f4f4;height: 40px;width: 82%;margin-left: 67px;">
+                <div *ngIf="i === selectedreview" style="background-color:#f4f4f4;height: 40px;width: 82%;margin-left: 67px;">
                     <ion-grid>
                         <ion-row>
                             <ion-col col-10>
@@ -222,44 +157,10 @@
                     </ion-grid>
                 </div>
 
-                <ion-item>
-                    <ion-avatar item-start>
-                        <img src="imgs/user_image.png">
-                    </ion-avatar>
-                    <h2>//joeyhac</h2>
-                    <img src="imgs/rating.png" style="width: 20%;margin-top: 0px;margin-left: -2px;" />
-                    <p text-wrap>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                        incididunt ut
-                        labore et dolore magna aliqua</p>
-                    <p style="color:blue;font-size:0.65em">Reply</p>
-                </ion-item>
-
-                <ion-item>
-                    <ion-avatar item-start>
-                        <img src="imgs/user_image.png">
-                    </ion-avatar>
-                    <h2>//jadassy</h2>
-                    <img src="imgs/rating.png" style="width: 20%;margin-top: 0px;margin-left: -2px;" />
-                    <p text-wrap>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                        incididunt ut
-                        labore et dolore magna aliqua</p>
-                    <p style="color:blue;font-size:0.65em">Reply</p>
-                </ion-item>
-
-                <ion-item>
-                    <ion-avatar item-start>
-                        <img src="imgs/user_image.png">
-                    </ion-avatar>
-                    <h2>//greg</h2>
-                    <img src="imgs/rating.png" style="width: 20%;margin-top: 0px;margin-left: -2px;" />
-                    <p text-wrap>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                        incididunt ut
-                        labore et dolore magna aliqua</p>
-                    <p style="color:blue;font-size:0.65em">Reply</p>
-                </ion-item>
             </ion-list>
-
         </ion-list>
+
+
 
 
     </div>

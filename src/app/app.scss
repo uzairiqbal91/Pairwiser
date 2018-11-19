@@ -41,8 +41,25 @@ ion-icon {
    mask-image: url(../assets/imgs/Icon4.svg);  
 }
 &[class*="appname-settings_prof"] {
-   mask-image: url(../assets/imgs/settings_prof.svg);
+   mask-image: url(../assets/imgs/settings_prof.png);
 }
+
+&[class*="appname-settings"] {
+   mask-image: url(../assets/imgs/setin.png);
+}
+
+&[class*="appname-customicon5"] {
+   mask-image: url(../assets/imgs/Icon5.svg);
+}
+
+&[class*="appname-cardbox"] {
+   mask-image: url(../assets/imgs/cardbox.png);
+}
+
+&[class*="appname-menu"] {
+   mask-image: url(../assets/imgs/menu.png);
+}
+
 }
 
 

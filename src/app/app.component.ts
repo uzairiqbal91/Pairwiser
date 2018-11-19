@@ -11,13 +11,17 @@ import { AboutPage } from '../pages/about/about';
 import { InboxPage } from '../pages/inbox/inbox';
 import { OneSignal } from '@ionic-native/onesignal';
 import { NativeStorage } from '@ionic-native/native-storage';
+import { UploadlistingsPage } from '../pages/uploadlistings/uploadlistings';
+import { ImagePicker } from '@ionic-native/image-picker';
+import { AndroidPermissions } from '@ionic-native/android-permissions';
+import { EditProfilePage } from '../pages/edit-profile/edit-profile';
 
 @Component({
   templateUrl: 'app.html'
 })
 
-export class MyApp {
-  rootPage:any = TabsPage;  //MainPage TabsPage
+export class MyApp { 
+  rootPage:any = TabsPage;  //MainPage TabsPage  UploadlistingsPage
   @ViewChild('nav') nav: NavController;
   order = OrderHistoryPage;
   notification = NotificationsPage;
@@ -25,7 +29,7 @@ export class MyApp {
   profile = AboutPage;
   inbox = InboxPage;
 
-  constructor(private nativeStorage: NativeStorage, private oneSignal: OneSignal, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,private menuCtrl: MenuController) {
+  constructor(private androidPermissions: AndroidPermissions, private imagePicker: ImagePicker, private nativeStorage: NativeStorage, private oneSignal: OneSignal, platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,private menuCtrl: MenuController) {
     platform.ready().then(() => {
       statusBar.styleDefault();  
       splashScreen.hide();
@@ -52,7 +56,13 @@ export class MyApp {
          );
      });
   
-     
+     this.androidPermissions.checkPermission(this.androidPermissions.PERMISSION.CAMERA).then(
+      result => {
+         console.log("Has permission?" + result.hasPermission);
+        //this.androidPermissions.requestPermissions([this.androidPermissions.PERMISSION.CAMERA, this.androidPermissions.PERMISSION.GET_ACCOUNTS]);
+      },
+      err => this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.CAMERA)
+    ); 
     });
   }
 

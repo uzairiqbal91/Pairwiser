@@ -53,4 +53,76 @@ page-about {
         width: calc(100% - 8px - 8px);
         height: 38px;
     }
+
+    .change-color
+  {
+    border-radius: 12px 12px;
+    border-top-color:#f4f4f4 !important;
+    border-bottom-color:#f4f4f4 !important;
+    border-right-color:#f4f4f4 !important;
+    border-left-color:#f4f4f4 !important;
+    border-radius:12px 12px;
+    border-top: 2px solid;
+    border-bottom: 2px solid; 
+    border-left: 2px solid;
+    border-right: 2px solid;
+    width: 96%;
+    margin-top: -6px;
+  }
+
+
+//onclick change bg
+  .highlight
+  {
+    border-radius: 12px 12px;
+    border-top-color:#ff7600 !important;
+    border-bottom-color:#ff7600 !important;
+    border-right-color:#ff7600 !important;
+    border-left-color:#ff7600 !important;
+    border-radius:12px 12px;
+    border-top: 4px solid;
+    border-bottom: 4px solid; 
+    border-left: 4px solid;
+    border-right: 4px solid; 
+    width: 96%;
+    margin-top: -6px;
+  }
+
+  .change-color-pairs
+  {
+    border-radius: 12px 12px;
+    border-top-color:#f4f4f4 !important;
+    border-bottom-color:#f4f4f4 !important;
+    border-right-color:#f4f4f4 !important;
+    border-left-color:#f4f4f4 !important;
+    border-radius:12px 12px;
+    border-top: 2px solid;
+    border-bottom: 2px solid; 
+    border-left: 2px solid;
+    border-right: 2px solid;
+    width: 96%;
+    margin-top: -6px;
+  }
+
+
+//onclick change bg
+  .highlight-pairs
+  {
+    border-radius: 12px 12px;
+    border-top-color:#ff7600 !important;
+    border-bottom-color:#ff7600 !important;
+    border-right-color:#ff7600 !important;
+    border-left-color:#ff7600 !important;
+    border-radius:12px 12px;
+    border-top: 4px solid;
+    border-bottom: 4px solid; 
+    border-left: 4px solid;
+    border-right: 4px solid; 
+    width: 96%;
+    margin-top: -6px;
+  }
+
+  .item-md ion-avatar[item-left], .item-md ion-thumbnail[item-left], .item-md ion-avatar[item-start], .item-md ion-thumbnail[item-start] {
+    margin: -39px 11px 12px 0;
+}
 }

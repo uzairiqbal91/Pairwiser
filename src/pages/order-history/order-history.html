@@ -3,19 +3,19 @@
     <ion-grid>
       <ion-row>
         <ion-col col-4>
-          <ion-icon name="ios-menu-outline" style="color:white;" (click)="OnOpenMenu()"></ion-icon>
+          <ion-icon name="appname-menu" style="color:white;font-size:1.8em" (click)="OnOpenMenu()"></ion-icon>
         </ion-col>
-        <ion-col col-4><img src="imgs/logo.png" style="width:100%" /></ion-col>
+        <ion-col col-4><div align="center"><img src="imgs/logo.png" style="width:80%"/></div></ion-col>
         <ion-col col-4></ion-col>
       </ion-row>
     </ion-grid>
   </ion-navbar>
   <div style="background-color: #2a3040">
     <ion-segment [(ngModel)]="order">
-      <ion-segment-button style="text-transform: none;font-size: 1.3em;" value="active">
+      <ion-segment-button style="text-transform: none;font-size: 1em;" value="active">
         Active
       </ion-segment-button>
-      <ion-segment-button style="text-transform: none;font-size: 1.3em;" value="history">
+      <ion-segment-button style="text-transform: none;font-size: 1em;" value="history">
         History
       </ion-segment-button>
     </ion-segment>
@@ -58,7 +58,3 @@
   </div>
 
 </ion-content>
-
-<ion-footer>
-  <img src="imgs/tab.png"/>
-</ion-footer>

@@ -35,6 +35,8 @@ import { Stripe } from '@ionic-native/stripe';
 import { UploadlistingsPage } from '../pages/uploadlistings/uploadlistings';
 import { SlidesPage } from '../pages/slides/slides';
 import { OneSignal } from '@ionic-native/onesignal';
+import { ImagePicker } from '@ionic-native/image-picker';
+import { AndroidPermissions } from '@ionic-native/android-permissions';
 
 @NgModule({
   declarations: [
@@ -112,9 +114,12 @@ imports: [
     Camera,
     File,
     FileTransfer,
+    FileTransferObject,
     NativeStorage,
     Stripe,
     OneSignal,
+    ImagePicker,
+    AndroidPermissions,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })

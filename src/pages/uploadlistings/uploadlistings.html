@@ -14,20 +14,32 @@
   </ion-grid>
 
 
-  <ion-scroll scrollX="true" style="width:112%; height:113px">
-    <ion-row nowrap>
-      <ion-col col-4><img src="imgs/add_picture.png" style="width: 75%;" /></ion-col>
-      <ion-col col-4>
-        <ion-card style="background-color: grey;width: 70%;height: 85px;margin-top: 2px;margin-left: -14px;"></ion-card>
-      </ion-col> <!-- margin-top: -91px;margin-left: 103px;" -->
-      <ion-col col-4>
-        <ion-card style="background-color: grey;width: 70%;height: 85px;margin-top: 2px;margin-left: -33px;"></ion-card>
-      </ion-col>
-      <ion-col col-4>
-        <ion-card style="background-color: grey;width: 70%;height: 85px;margin-top: 2px;margin-left: -50px;"></ion-card>
-      </ion-col>
-    </ion-row>
+
+  <ion-scroll *ngIf="imageStatus === '1' || imageStatus === 1" scrollX="true" style="width:112%; height:113px">
+      <ion-row nowrap>
+        <ion-col col-4 *ngFor="let results of images"><img src="{{ results }}" style="width: 75%;"/></ion-col>
+      </ion-row>
   </ion-scroll>
+
+
+  <ion-scroll *ngIf="imageStatus === ''"  style="width:112%; height:113px">
+      <ion-row nowrap>
+        <ion-col col-4><img src="imgs/add_picture.png" style="width: 75%;" (click)="getImages()" /></ion-col>
+        <ion-col col-4>
+          <ion-card style="background-color: grey;width: 70%;height: 85px;margin-top: 2px;margin-left: -14px;"></ion-card>
+        </ion-col>
+        <ion-col col-4>
+          <ion-card style="background-color: grey;width: 70%;height: 85px;margin-top: 2px;margin-left: -33px;"></ion-card>
+        </ion-col>
+        <ion-col col-4>
+          <ion-card style="background-color: grey;width: 70%;height: 85px;margin-top: 2px;margin-left: -50px;"></ion-card>
+        </ion-col>
+      </ion-row>
+  </ion-scroll>
+
+
+
+    
 
 
   <ion-card style="border-radius:12px 12px;background-color:white">
@@ -80,11 +92,11 @@
     <ion-grid>
       <ion-row>
         <ion-col col-4>
-         <ion-label style="font-size: 1.2em;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Condition</ion-label>
+          <ion-label style="font-size: 1.2em;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Condition</ion-label>
         </ion-col>
 
         <ion-col col-8>
-          <ion-segment [(ngModel)]="condition" style="width: 70%;float: right;" >
+          <ion-segment [(ngModel)]="condition" style="width: 70%;float: right;">
             <ion-segment-button value="new">
               New
             </ion-segment-button>
@@ -95,11 +107,11 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-   
+
   </ion-card>
 
   <div align="center">
     <button ion-button round full style="width:80%;background-color:#f9c04c;color:white">SAVE CHANGES</button>
   </div>
-  
+
 </ion-content>

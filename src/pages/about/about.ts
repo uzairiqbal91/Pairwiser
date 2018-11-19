@@ -14,13 +14,12 @@ export class AboutPage {
   public buttonClicked: boolean = false; 
   username : any;
   email : any;
+  selected = "";
+  selectedreview = "";
+  selected_pairs = "";
   products: { "image": string; "product_name": string; "price": string; }[];
-  public onButtonClick() {
-
-    this.buttonClicked = !this.buttonClicked;
-}
-
-
+  pairs: { "image": string; "product_name": string; "price": string; }[];
+  user_reviews: { "image": string; "user_name": string; "review": string; }[];
   public profile: string = 'stack';
   public categories: Array<string> = ['stack', 'pairs', 'reviews']
 
@@ -33,10 +32,19 @@ export class AboutPage {
       { "image": "imgs/shoes.png", "product_name": "Red wing moc toe", "price": "190" },
       { "image": "imgs/shoes2.png", "product_name": "Red wing moc toe", "price": "190" },
       { "image": "imgs/shoes2.png", "product_name": "Red wing moc toe", "price": "190" },
-      { "image": "imgs/shoes.png", "product_name": "Red wing moc toe", "price": "190" },
-      { "image": "imgs/shoes2.png", "product_name": "Red wing moc toe", "price": "190" },
-      { "image": "imgs/shoes.png", "product_name": "Red wing moc toe", "price": "190" },
+    ]
 
+    this.pairs = [
+
+      { "image": "imgs/shoes.png", "product_name": "Red wing moc toe", "price": "190" },
+      { "image": "imgs/shoes.png", "product_name": "Red wing moc toe", "price": "190" },
+    ]
+
+    this.user_reviews = [
+      {"image":"imgs/user_image.png", "user_name":"butterfly" , "review":"Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+      {"image":"imgs/user_image.png", "user_name":"joeyhac" , "review":"Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+      {"image":"imgs/user_image.png", "user_name":"jadassy" , "review":"Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+      {"image":"imgs/user_image.png", "user_name":"greg" , "review":"Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
     ]
     //   this.nativeStorage.getItem('username')
     // .then(
@@ -67,17 +75,30 @@ export class AboutPage {
     this.profile = tabName;
   }
 
-  addEvent1(){
-    console.log("event 1 called");
-    this.buttonColor = '#ff7600';
-    this.buttonColor1 = 'lightgrey';
-    }
+  addEvent1(index: string, image: string, product_name: string, price: string) {
+    console.log("Stack");
+    console.log("Image:" + image);
+    console.log("Product_name: " + product_name);
+    console.log("Price:" + price);
+    console.log("At Index:" + index);
+    this.selected = index;
+    //this.pairs = 'sizes';
+  }
 
-    addEvent2(){
-      console.log("event 2 called");
-      this.buttonColor1 = '#ff7600';
-      this.buttonColor = 'lightgrey';
-      }
+  addEventPairs(index: string, image: string, product_name: string, price: string) {
+    console.log("Pairs");
+    console.log("Image:" + image);
+    console.log("Product_name: " + product_name);
+    console.log("Price:" + price);
+    console.log("At Index:" + index);
+    this.selected_pairs = index;
+    //this.pairs = 'sizes';
+  }
+
+   onButtonClick(index:string) {
+    console.log("Index:" + index);
+    this.selectedreview = index;
+}
 
       refresh_alert() {
         const confirm = this.alertCtrl.create({
