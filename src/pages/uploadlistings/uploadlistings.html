@@ -16,61 +16,79 @@
 
 
   <ion-scroll *ngIf="imageStatus === '1' || imageStatus === 1" scrollX="true" style="width:112%; height:113px">
-      <ion-row nowrap>
-        <ion-col col-4 *ngFor="let results of images"><img src="{{ results }}" style="width: 75%;"/></ion-col>
-      </ion-row>
+    <ion-row nowrap>
+      <ion-col col-4 *ngFor="let expense of expenses"><img src="{{ expense.images }}" style="width: 75%;" (click)="getImages()" /></ion-col>
+    </ion-row>
   </ion-scroll>
 
 
-  <ion-scroll *ngIf="imageStatus === ''"  style="width:112%; height:113px">
-      <ion-row nowrap>
-        <ion-col col-4><img src="imgs/add_picture.png" style="width: 75%;" (click)="getImages()" /></ion-col>
-        <ion-col col-4>
-          <ion-card style="background-color: grey;width: 70%;height: 85px;margin-top: 2px;margin-left: -14px;"></ion-card>
-        </ion-col>
-        <ion-col col-4>
-          <ion-card style="background-color: grey;width: 70%;height: 85px;margin-top: 2px;margin-left: -33px;"></ion-card>
-        </ion-col>
-        <ion-col col-4>
-          <ion-card style="background-color: grey;width: 70%;height: 85px;margin-top: 2px;margin-left: -50px;"></ion-card>
-        </ion-col>
-      </ion-row>
+  <ion-scroll *ngIf="imageStatus === ''" scrollX="true" style="width:112%; height:113px">
+    <ion-row nowrap>
+      <ion-col col-4><img src="imgs/add_picture.png" style="width: 75%;" (click)="getImages()" /></ion-col>
+      <ion-col col-4>
+        <ion-card style="background-color: grey;width: 70%;height: 85px;margin-top: 2px;margin-left: -14px;"></ion-card>
+      </ion-col>
+      <ion-col col-4>
+        <ion-card style="background-color: grey;width: 70%;height: 85px;margin-top: 2px;margin-left: -33px;"></ion-card>
+      </ion-col>
+      <ion-col col-4>
+        <ion-card style="background-color: grey;width: 70%;height: 85px;margin-top: 2px;margin-left: -50px;"></ion-card>
+      </ion-col>
+    </ion-row>
   </ion-scroll>
 
 
 
-    
+
 
 
   <ion-card style="border-radius:12px 12px;background-color:white">
 
     <ion-item>
-      <ion-input type="text" placeholder="Title(optional)" style="color:grey"></ion-input>
+      <ion-input type="text" placeholder="Title(optional)" style="color:grey" [(ngModel)]="title"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label fixed style="color:black">&nbsp;&nbsp;USD</ion-label>
-      <ion-input type="text" value=""></ion-input>
+      <ion-input type="text" value="" [(ngModel)]="price"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label fixed style="color:black">&nbsp;&nbsp;Shipping cost</ion-label>
-      <ion-input type="text" value=""></ion-input>
+      <ion-input type="text" value="" [(ngModel)]="shipping_cost"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-input type="text" placeholder="Description(optional)" style="color:grey"></ion-input>
+      <ion-input type="text" placeholder="Description(optional)" style="color:grey" [(ngModel)]="description"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label>&nbsp;&nbsp;SIZE</ion-label>
       <ion-select [(ngModel)]="size">
-        <ion-option value="nes">4</ion-option>
-        <ion-option value="n64">4.5</ion-option>
-        <ion-option value="ps">5</ion-option>
-        <ion-option value="genesis">5.5</ion-option>
-        <ion-option value="saturn">6</ion-option>
-        <ion-option value="snes">6.5</ion-option>
+        <ion-option value="4">4</ion-option>
+        <ion-option value="4.5">4.5</ion-option>
+        <ion-option value="5">5</ion-option>
+        <ion-option value="5.5">5.5</ion-option>
+        <ion-option value="6">6</ion-option>
+        <ion-option value="6.5">6.5</ion-option>
+        <ion-option value="7">7</ion-option>
+        <ion-option value="7.5">7.5</ion-option>
+        <ion-option value="8">8</ion-option>
+        <ion-option value="8.5">8.5</ion-option>
+        <ion-option value="9">9</ion-option>
+        <ion-option value="9.5">9.5</ion-option>
+        <ion-option value="10">10</ion-option>
+        <ion-option value="10.5">10.5</ion-option>
+        <ion-option value="11">11</ion-option>
+        <ion-option value="11.5">11.5</ion-option>
+        <ion-option value="12">12</ion-option>
+        <ion-option value="12.5">12.5</ion-option>
+        <ion-option value="13">13</ion-option>
+        <ion-option value="13.5">13.5</ion-option>
+        <ion-option value="14">14</ion-option>
+        <ion-option value="14.5">14.5</ion-option>
+        <ion-option value="15">15</ion-option>
+        <ion-option value="15.5">15.5</ion-option>
       </ion-select>
     </ion-item>
 
@@ -78,15 +96,15 @@
     <ion-item>
       <ion-label>&nbsp;&nbsp;BRAND</ion-label>
       <ion-select [(ngModel)]="brand">
-        <ion-option value="nes">Nike</ion-option>
-        <ion-option value="n64">Addidas</ion-option>
-        <ion-option value="ps">Custom</ion-option>
+        <ion-option value="nike">Nike</ion-option>
+        <ion-option value="addidas">Addidas</ion-option>
+        <ion-option value="custom">Custom</ion-option>
       </ion-select>
     </ion-item>
 
     <ion-item>
       <ion-label>Share on Facebook</ion-label>
-      <ion-toggle checked="false"></ion-toggle>
+      <ion-toggle checked="false" [(ngModel)]="fb_share"></ion-toggle>
     </ion-item>
 
     <ion-grid>
@@ -111,7 +129,7 @@
   </ion-card>
 
   <div align="center">
-    <button ion-button round full style="width:80%;background-color:#f9c04c;color:white">SAVE CHANGES</button>
+    <button ion-button round full style="width:80%;background-color:#f9c04c;color:white" (click)="save()">SAVE CHANGES</button>
   </div>
 
 </ion-content>

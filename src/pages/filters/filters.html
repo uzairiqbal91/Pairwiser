@@ -21,10 +21,10 @@
 <ion-content padding no-bounce>
 
 
-  <div align="center">
+  <div align="center" style="margin-top:-15px">
 
     <p style="font-size:1.1em">POSTED</p>
-    <ion-item no-lines style="margin-top: -28px;background-color: transparent;">
+    <ion-item no-lines style="margin-top: -38px;background-color: transparent;">
       <ion-range min="20" max="100" pin="true" [(ngModel)]="posted" color="primary">
         <ion-label range-left class="small-text" style="color:white">20</ion-label>
         <ion-label range-right style="color:white">0</ion-label>
@@ -51,7 +51,7 @@
 
     <p>up to £140</p>
 
-    <ion-segment [(ngModel)]="first" style="width: 70%;">
+    <ion-segment [(ngModel)]="filter" style="width: 70%;">
       <ion-segment-button style="text-transform: none" value="lowest">
         Lowest First
       </ion-segment-button>
@@ -76,7 +76,7 @@
     </ion-item>
 
 
-    <button ion-button round full style="width:80%; color:white; background-color:#f9c04c;margin-top:25px">APPLY</button>
+    <button ion-button round full style="width:80%; color:white;background-color:#f9c04c;margin-top:25px" (click)="apply()">APPLY</button>
   </div>
 
 

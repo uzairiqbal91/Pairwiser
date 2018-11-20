@@ -7,6 +7,7 @@ import { File } from '@ionic-native/file';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { NativeStorage } from '@ionic-native/native-storage';
+import { UploadlistingsPage } from '../uploadlistings/uploadlistings';
 
 @Component({
   selector: 'page-edit-profile',
@@ -14,25 +15,31 @@ import { NativeStorage } from '@ionic-native/native-storage';
 })
 export class EditProfilePage {
   url: any;
-  imageURI: any;
+  imageURI: any = '';
 
-  constructor(public toastCtrl: ToastController, public actionSheetCtrl: ActionSheetController, public navCtrl: NavController, public navParams: NavParams,public alertCtrl: AlertController, private loadingCtrl: LoadingController, private http: Http, private transfer: FileTransfer, private camera: Camera, private nativeStorage: NativeStorage)   //private transfer: FileTransfer, private camera: Camera, private nativeStorage: NativeStorage,
-   {
+  constructor(public toastCtrl: ToastController, public actionSheetCtrl: ActionSheetController, public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, private loadingCtrl: LoadingController, private http: Http, private transfer: FileTransfer, private camera: Camera, private nativeStorage: NativeStorage)   //private transfer: FileTransfer, private camera: Camera, private nativeStorage: NativeStorage,
+  {
+    this.nativeStorage.getItem('imageURI')
+    .then(
+      data => {
+        console.log("Checking for Email:" + data);
+        this.imageURI = data;
+      },
+      error => console.error(error)
+    );
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EditProfilePage');
   }
 
-  back()
-  {
+  back() {
     this.navCtrl.setRoot(SettingsPage);
   }
 
+  // upload image
 
- // upload image
-   
- public presentActionSheet() {
+  public presentActionSheet() {
     let actionSheet = this.actionSheetCtrl.create({
       title: 'Select Image Source',
       buttons: [
@@ -56,10 +63,10 @@ export class EditProfilePage {
       ]
     });
     actionSheet.present();
-    
-    }
-    
-    public takePicture(sourceType) {
+
+  }
+
+  public takePicture(sourceType) {
     // Create options for the Camera Dialog
     var options = {
       quality: 100,
@@ -67,39 +74,46 @@ export class EditProfilePage {
       saveToPhotoAlbum: false,
       correctOrientation: true
     };
-    
+
     // Get the data of an image
     this.camera.getPicture(options).then((imagePath) => {
       // Special handling for Android library
-     console.log("ImageURL from Source",imagePath)
+      console.log("ImageURL from Source", imagePath)
       this.imageURI = imagePath;
-      console.log("ImageURL ",this.imageURI)
+      console.log("ImageURL ", this.imageURI);
+
+      this.nativeStorage.setItem('imageURI', this.imageURI)
+        .then(
+          () => console.log('Image Stored!'),
+          error => console.error('Error storing item', error)
+        );
+
     }, (err) => {
       this.presentToast('Error while selecting image.');
     });
-    }
-    
-    private presentToast(text) {
+  }
+
+  private presentToast(text) {
     let toast = this.toastCtrl.create({
       message: text,
       duration: 3000,
       position: 'bottom'
     });
     toast.present();
-    }
-     
-    
+  }
+
+
   //   public uploadImage() {
-    
+
   //   // File for Upload
   //   console.log(this.imageURI)
   //   var targetPath = this.imageURI
-    
+
   //   var temp= this.imageURI.replace(".png?","_");
   //   var temp1=temp.replace(".jpg?","_");
   //   // File name only
   //   var filename = temp1;
-    
+
   //   var options = {
   //     fileKey: "file",
   //     fileName:filename,
@@ -107,16 +121,16 @@ export class EditProfilePage {
   //     mimeType: "image/jpeg",
   //     params: { 'fileName': filename }
   //   };
-    
+
   //   const fileTransfer: FileTransferObject = this.transfer.create();
-    
+
   //   let loadingCtrl = this.loadingCtrl.create({
   //     content: 'Uploading...',
   //   });
   //   loadingCtrl.present();
-    
+
   //  //    this.url = "http://letslock.com/WebSamples/masjid/mobile/userimage.php?email=" + this.email; 
-  
+
   // //    console.log(this.url)
   //     fileTransfer.upload(this.imageURI, this.url, options).then(data => {
   //       console.log("FiletransferObject URl",this.imageURI)
@@ -130,7 +144,7 @@ export class EditProfilePage {
   //     //this.presentToast('Error while uploading file.');
   //     console.log("Failed uploading image", err);
   //   });
-    
+
   //   }
 
 }

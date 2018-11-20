@@ -5,22 +5,15 @@
       <p style="font-size:1.3em;color:white;padding-bottom:8px">EDIT PROFILE</p>
     </div>
   </div>
-  <!-- <div align="center" style="background-color:#2a3040;margin-top: -20px;padding-bottom:20px">
-    <ion-avatar (click)="presentActionSheet()">
-      <img src="imgs/user_image.png" style="width:100%" />
-    </ion-avatar>
-  </div> -->
-
-  <div align="center" style="background-color:#2a3040;margin-top: -20px;padding-bottom:20px" (click)="presentActionSheet()">
-    <img *ngIf="imageURI === undefined || imageURI === 'undefined'" src="imgs/default.png" style="width: 27%;"/>
-    <img *ngIf="imageURI != undefined || imageURI != 'undefined'" src="{{imageURI}}" style="width: 27%;"/>
+ 
+  <div align="center" style="background-color:#2a3040;margin-top:-20px;padding-bottom:20px" (click)="presentActionSheet()">
+    <img *ngIf="imageURI === '' || imageURI === 'undefined' || imageURI === undefined"  src="imgs/default.png" class="default">
+    <img *ngIf="imageURI != ''" src="{{imageURI}}"     class="change-image">
   </div>
-
-
+  
   <div>
 
     <ion-list padding>
-
       <ion-item style="display:none">
         <ion-label floating>Username</ion-label>
         <ion-input type="text"></ion-input>
@@ -43,9 +36,7 @@
 
       <ion-item style="margin-top:20px">
         <ion-label>
-          <p style="background-color:#ff811c;color:white;padding-top:5px;padding-bottom:5px;width:50%;padding-left:5px;font-size:1.3em">
-            Messanger
-          </p>
+          <p style="background-color:#ff811c;color:white;padding-top:5px;padding-bottom:5px;width:50%;padding-left:5px;font-size:1.3em">Messanger</p>
         </ion-label>
         <ion-toggle checked="false"></ion-toggle>
       </ion-item>

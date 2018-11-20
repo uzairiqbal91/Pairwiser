@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { ImagePicker } from '@ionic-native/image-picker';
-import { AndroidPermissions } from '@ionic-native/android-permissions';
+import { EditProfilePage } from '../edit-profile/edit-profile';
 
 @Component({
   selector: 'page-uploadlistings',
@@ -15,14 +15,26 @@ export class UploadlistingsPage {
   uri: any;
   images : any = "";
   imageStatus : any = '';
+  expenses: any[];
+  title: any;
+  price: any;
+  shipping_cost: any;
+  description: any;
+  size: any;
+  brand: any;
+  fb_share: any;
 
   
-  constructor(private androidPermissions: AndroidPermissions, public navCtrl: NavController, public navParams: NavParams, private imagePicker: ImagePicker) {
-
+  constructor(public navCtrl: NavController, public navParams: NavParams, private imagePicker: ImagePicker) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad UploadlistingsPage');
+  }
+
+  close()
+  {
+    this.navCtrl.push(EditProfilePage);
   }
 
   getImages()
@@ -37,14 +49,34 @@ export class UploadlistingsPage {
      }
 
     this.imagePicker.getPictures(options).then((results) => {
-      for (var i = 0; i < results.length; i++) {
-          console.log('Image URI: ' + results[i]);
-          this.images = results[i];
-          this.images = Array.of(this.images);
-          this.imageStatus = '1';
-      }
-    }, (err) => { });
+
+      this.expenses = [];
+          for (var i = 0; i < results.length; i++) {
+            this.expenses.push({ images: results[i]});
+            console.log(this.expenses[i].images);
+            this.imageStatus = '1';
+          }
+
+    }, (err) => { console.log(err) });
   }
 
+  save()
+  {
+    console.log(this.title);
+    console.log(this.price);
+    console.log(this.shipping_cost);
+    console.log(this.description);
+    console.log(this.size);
+    console.log(this.brand);
+    console.log(this.condition);
+
+    if(this.fb_share === 'true' || this.fb_share === true)
+    {
+       console.log("Allow Facebook Share : Yes");
+    }
+    else
+    console.log("Allow Facebook Share : No");
+
+  }
 
 }
