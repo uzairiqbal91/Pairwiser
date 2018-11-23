@@ -15,6 +15,7 @@ import { UploadlistingsPage } from '../pages/uploadlistings/uploadlistings';
 import { ImagePicker } from '@ionic-native/image-picker';
 import { AndroidPermissions } from '@ionic-native/android-permissions';
 import { EditProfilePage } from '../pages/edit-profile/edit-profile';
+import { ShippingPage } from '../pages/shipping/shipping';
 
 @Component({
   templateUrl: 'app.html'

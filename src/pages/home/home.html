@@ -28,29 +28,23 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <!--div [ngSwitch]="pairs"-->
+  
   <div [ngSwitch]="pairs" swipeSegment [tabsList]="categories" [(currentTab)]="category" (tabChanged)="onTabChanged($event)"
     class="swipe-area">
 
-    <ion-list *ngSwitchCase="'discover'">
+    <ion-list *ngSwitchCase="'discover'">   <!--Two Ion cards because of Staggered grid view, condition index / 2 === 0 -->
 
       <ion-grid style="margin-left: -6px; margin-top:15px" no-padding>
-        <!--style="margin-top: 10px;" -->
         <ion-row>
-
           <ion-col col-6 *ngFor="let post of products,let i = index">
-
-            <ion-card [class.highlight]=" i === selected" class="change-color" (click)="addEvent1(i, post.image, post.product_name, post.price);">
-              <!--style="margin-top:-5px"-->
-
+            
+            <ion-card *ngIf="i%2 === 0" [class.highlight]=" i === selected" class="change-color" (click)="addEvent1(i, post.image, post.product_name, post.price);">
               <div align="center" style="padding-top:5px;padding-bottom:5px">
                 <img src="{{post.image}}" style="width:90%" />
               </div>
-
               <div align="center" style="margin-top: 19px">
                 <img src="imgs/line.png" />
               </div>
-
               <div style="margin-top: 10px;padding-bottom:15px">
                 <h4 style="color:grey;padding-left:5px;font-size: 1.0em;">{{post.product_name}}</h4>
                 <b style="color:black;padding-left:7px;padding-bottom:10px;font-size: 1.0em;">${{post.price}}</b>
@@ -60,9 +54,32 @@
                 </div>
               </div>
             </ion-card>
+
+            <ion-card style="margin-top:2px" *ngIf="i%2 != 0" [class.highlight]=" i === selected" class="change-color" (click)="addEvent1(i, post.image, post.product_name, post.price);">
+                <div align="center" style="padding-top:5px;padding-bottom:5px">
+                  <img src="{{post.image}}" style="width:90%" />
+                </div>
+                <div align="center" style="margin-top: 19px">
+                  <img src="imgs/line.png" />
+                </div>
+                <div style="margin-top: 10px;padding-bottom:15px">
+                  <h4 style="color:grey;padding-left:5px;font-size: 1.0em;">{{post.product_name}}</h4>
+                  <b style="color:black;padding-left:7px;padding-bottom:10px;font-size: 1.0em;">${{post.price}}</b>
+                  <div align="right" style="margin-top: -22px;padding-right: 6px;">
+                    <ion-icon ios="ios-refresh-circle" md="md-refresh-circle" style="color:#ff7200;font-size: 1.65em;"
+                      (click)="refresh_alert()"></ion-icon>
+                  </div>
+                </div>
+              </ion-card>
+
+
+
           </ion-col>
         </ion-row>
       </ion-grid>
+
+
+
     </ion-list>
 
 

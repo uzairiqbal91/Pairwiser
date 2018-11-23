@@ -1,0 +1,27 @@
+page-shipping {
+    .toolbar-background-md {
+        color: white;
+        background-color: #2a3040;
+    }  
+
+    .has-changed{
+        //height: 0px;
+        background-color: #e2e9ef;
+        width: 120%;
+        margin-top: 1px;
+    }
+
+    .has-changed2{
+        //height: 0px;
+        background-color: #e2e9ef;
+        width: 120%;
+        margin-top: -3px;
+    }
+
+    .item-md h3, .item-md h4, .item-md h5, .item-md h6 {
+        margin: 2px 0px;
+        font-size: 1.3rem;
+        font-weight: normal;
+        line-height: normal;
+    }
+}

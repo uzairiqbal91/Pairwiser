@@ -14,9 +14,7 @@ export class HomePage {
   selected = "";
   selected_size = "";
   staggered = "";
-
   two: any = '2';
-
   public pairs: string = 'discover';
   public categories: Array<string> = ['discover', 'sizes', 'brands']
   items: string[];
@@ -27,8 +25,8 @@ export class HomePage {
 
   constructor(private nativeStorage: NativeStorage, public navCtrl: NavController, private menuCtrl: MenuController, public alertCtrl: AlertController, private loadingCtrl: LoadingController, private http: Http) {
 
-  //  this.getProducts();
-  //  this.getSizes();
+    //  this.getProducts();
+    //  this.getSizes();
 
     this.products = [
 
@@ -43,7 +41,7 @@ export class HomePage {
     ]
 
     this.items = [
-      '4', '4.5','5','5.5','6','6.5','7','7.5','8','8.5','9','9.5','10','10.5','11','11.5','12','12.5','13','13.5','14','14.5','15','15.5',
+      '4', '4.5', '5', '5.5', '6', '6.5', '7', '7.5', '8', '8.5', '9', '9.5', '10', '10.5', '11', '11.5', '12', '12.5', '13', '13.5', '14', '14.5', '15', '15.5',
     ];
   }
 

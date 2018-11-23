@@ -37,6 +37,8 @@ import { SlidesPage } from '../pages/slides/slides';
 import { OneSignal } from '@ionic-native/onesignal';
 import { ImagePicker } from '@ionic-native/image-picker';
 import { AndroidPermissions } from '@ionic-native/android-permissions';
+import { OpenNativeSettings } from '@ionic-native/open-native-settings';
+import { ShippingPage } from '../pages/shipping/shipping';
 
 @NgModule({
   declarations: [
@@ -64,7 +66,8 @@ import { AndroidPermissions } from '@ionic-native/android-permissions';
     InboxPage,
     StripecheckoutPage,
     UploadlistingsPage,
-    SlidesPage
+    SlidesPage,
+    ShippingPage
 
   ],
   // imports: [
@@ -105,7 +108,8 @@ imports: [
     InboxPage,
     StripecheckoutPage,
     UploadlistingsPage,
-    SlidesPage
+    SlidesPage,
+    ShippingPage
 
   ],
   providers: [
@@ -120,6 +124,7 @@ imports: [
     OneSignal,
     ImagePicker,
     AndroidPermissions,
+    OpenNativeSettings,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })

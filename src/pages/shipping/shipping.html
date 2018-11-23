@@ -1,0 +1,70 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>
+        <div align="center" style="margin-left: -43px">
+          <p style="color:white">DELIVERY</p>
+        </div>  
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+
+
+<ion-content>
+
+  <div class="has-changed">
+    <p class="has-changed" style="color:black;float:left;padding-left: 10px;font-size:1.1em;padding-top:8px;padding-bottom: 12px;">SHIPPING ADDRESS</p>
+  </div>
+
+
+<div style="margin-top:-10px" align="center">
+      <ion-list nowrap>
+          <ion-item *ngFor="let post of shipping">
+            <h2><b style="color:grey">{{post.area_name}}</b></h2>
+            <h3>{{post.address}}</h3>
+            <p>{{post.number}}</p>
+          </ion-item>
+
+       
+
+        <ion-item nowrap>
+            <h3 style="color: #1969b0;font-size: 1.4rem;"><b>+ Add a new address</b></h3>
+        </ion-item>
+      </ion-list>
+</div>
+
+<div class="has-changed2">
+    <p class="has-changed2" style="color:black;float:left;padding-left: 10px;font-size:1.1em;padding-top:8px;padding-bottom: 12px;">SUMMARY</p>
+  </div>
+
+  <ion-list>
+      <ion-item>
+          <ion-label>Shipping Method</ion-label>
+          <ion-select [(ngModel)]="shipping_method">
+            <ion-option value="EMS">EMS</ion-option>
+            <ion-option value="TCS">TCS</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Subtotal</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+
+          <ion-item>
+              <ion-label>Shipping cost</ion-label>
+              <ion-input type="text"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label><b style="color:black">Total</b></ion-label>
+                <ion-input type="text"></ion-input>
+              </ion-item>
+
+  </ion-list>
+
+
+  <div align="center">
+    <button ion-button round full style="width:85%;color:white;background-color: #f9c04c">CHECKOUT</button>
+  </div>
+
+</ion-content>

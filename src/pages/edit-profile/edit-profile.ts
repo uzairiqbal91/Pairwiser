@@ -38,7 +38,6 @@ export class EditProfilePage {
   }
 
   // upload image
-
   public presentActionSheet() {
     let actionSheet = this.actionSheetCtrl.create({
       title: 'Select Image Source',
@@ -53,7 +52,6 @@ export class EditProfilePage {
           text: 'Use Camera',
           handler: () => {
             this.takePicture(this.camera.PictureSourceType.CAMERA);
-            //this.Alertconfirm();
           }
         },
         {
@@ -63,7 +61,6 @@ export class EditProfilePage {
       ]
     });
     actionSheet.present();
-
   }
 
   public takePicture(sourceType) {
